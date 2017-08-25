@@ -10,7 +10,7 @@ class Blog extends React.Component {
 
     posts.forEach((post) => {
       list.push({
-        path: `/posts${post.node.fields.slug}`,
+        path: `/updates${post.node.fields.slug}`,
         tags: post.node.frontmatter.tags,
         category: post.node.frontmatter.category,
         title: post.node.frontmatter.title,
@@ -25,16 +25,20 @@ class Blog extends React.Component {
   }
 
 	render() {
-    const path = this.props.location.pathname;
     const posts = this.getPosts();
+    const path = this.props.location.pathname;
 
 		return (
       <section className="blog section">
+        { path === '/' ?
+          <h1 className="title">
+            Latest Updates
+          </h1>
+        : null }
         <Posts data={posts} />
         { path === '/' ?
-          <Link to="/posts"
-                className="button">
-            See More Posts
+          <Link to="/updates" className="button">
+            View Past Updates
           </Link>
         : null }
       </section>

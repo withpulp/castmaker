@@ -11,11 +11,11 @@ class ReadNext extends React.Component {
     return (
       <figure className="read next figure">
         <Link className="link previous"
-              to={`/posts/${previous}`}>
+              to={`/updates/${previous}`}>
           <small className="label">Read Previous</small> {previous.split('-').join(' ')}
         </Link>
         <Link className="link next"
-              to={`/posts/${next}`}>
+              to={`/updates/${next}`}>
           <small className="label">Read Next</small> {next.split('-').join(' ')}
         </Link>
       </figure>

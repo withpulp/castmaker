@@ -6,13 +6,13 @@ import Blog from '../containers/blog/';
 import SEO from '../components/seo/';
 import config from '../../data/config';
 
-class PostsIndex extends React.Component {
+class UpdatesIndex extends React.Component {
   render() {
     const { location, data } = this.props;
     const content = data.allMarkdownRemark.edges;
     const hero = {
-      title: 'Posts',
-      caption: 'Read All About It'
+      title: 'Development Updates',
+      caption: 'These are the documents of our product\'s entire life cycle'
     };
 
     // @TODO: filter out post types in graphQL
@@ -25,7 +25,7 @@ class PostsIndex extends React.Component {
     });
 
     return (
-      <div className="posts page">
+      <div className="updates page">
         <Helmet title={`Posts | ${config.siteTitle}`} />
         <SEO postEdges={posts} />
         <Hero data={hero} />
@@ -35,11 +35,11 @@ class PostsIndex extends React.Component {
   }
 }
 
-export default PostsIndex;
+export default UpdatesIndex;
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query PostsQuery {
+  query UpdatesQuery {
   allMarkdownRemark(
     limit: 2000,
     sort: { fields: [frontmatter___date], order: DESC },

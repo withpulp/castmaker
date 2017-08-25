@@ -11,7 +11,7 @@ class Tags extends Component {
         {tags && tags.map(tag => (
           <Link className="tag button"
                 key={tag}
-                to={`/posts/tags/${_.kebabCase(tag)}`}>
+                to={`/updates/tags/${_.kebabCase(tag)}`}>
             {tag}
           </Link>
         ))}

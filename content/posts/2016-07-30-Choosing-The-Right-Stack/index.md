@@ -1,14 +1,16 @@
 ---
-title: "You Have Seen Four Beautiful Sunsets"
-date: "2016.08.14"
-previous: "do-things-that-have-never-been-done-before"
-next: "astronomy-compels-the-soul-to-look-upward"
-slug: "you-have-seen-four-beautiful-sunsets"
+title: "Choosing The Right Stack"
+date: "2016.07.30"
+previous: "brainstorming-design-ideas"
+next: "setting-up-our-development-environment"
+slug: "choosing-the-right-stack"
 type: "post"
-category: "Science Fiction"
+category: "Research"
 tags:
-  - utopia
-  - scifi
+  - node
+  - mongo
+  - react
+  - express
 ---
 
 The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.

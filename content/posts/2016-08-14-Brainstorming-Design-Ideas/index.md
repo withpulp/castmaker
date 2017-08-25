@@ -1,14 +1,15 @@
 ---
-title: "Astronomy Compels the Soul to Look Upward"
-date: "2016.07.30"
-previous: "you-have-seen-four-beautiful-sunsets"
-next: "do-things-that-have-never-been-done-before"
-slug: "astronomy-compels-the-soul-to-look-upward"
+title: "Brainstorming Design Ideas"
+date: "2016.08.14"
+previous: "setting-up-our-development-environment"
+next: "choosing-the-right-stack"
+slug: "brainstorming-design-ideas"
 type: "post"
-category: "Astronomy"
+category: "Design"
 tags:
-  - mathematics
-  - philosophy
+  - concept
+  - wireframe
+  - sketch
 ---
 
 We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore … We believe in what we’re doing. Now it’s time to go.

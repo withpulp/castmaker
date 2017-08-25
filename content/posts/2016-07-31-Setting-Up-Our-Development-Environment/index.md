@@ -1,14 +1,15 @@
 ---
-title: "Do Things That Have Never Been Done Before"
+title: "Setting Up Our Development Environment"
 date: "2016.07.31"
-previous: "astronomy-compels-the-soul-to-look-upward"
-next: "you-have-seen-four-beautiful-sunsets"
-slug: "do-things-that-have-never-been-done-before"
+previous: "choosing-the-right-stack"
+next: "brainstorming-design-ideas"
+slug: "setting-up-our-development-environment"
 type: "post"
-category: "Astronomy"
+category: "Development"
 tags:
-  - engineering
-  - technology
+  - webpack
+  - docker
+  - git
 ---
 
 We are all connected; To each other, biologically. To the earth, chemically. To the rest of the universe atomically.

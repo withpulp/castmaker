@@ -10,8 +10,8 @@ class AboutIndex extends React.Component {
   render() {
     const content = this.props.data.allMarkdownRemark.edges;
     const hero = {
-      title: 'What is this?',
-      caption: 'A Gatsby Starter for Ants!'
+      title: 'What is Castmaker?',
+      caption: config.siteDescription
     };
 
     // @TODO: get only about page data

@@ -25,9 +25,9 @@ class Menu extends React.Component {
             About
           </Link>
           <Link className="link"
-                to="/posts"
+                to="/updates"
                 onClick={action}>
-            Posts
+            Updates
           </Link>
         </nav>
       </figure>

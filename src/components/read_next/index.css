@@ -52,7 +52,6 @@
   font-size: 75%;
   font-weight: normal;
   text-transform: lowercase;
-  transition: all 250ms ease;
 }
 
 .read.next.figure .link:hover .label {

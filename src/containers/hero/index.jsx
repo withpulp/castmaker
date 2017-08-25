@@ -36,7 +36,7 @@ class Hero extends React.Component {
             : null }
             { category ?
               <Link className="category link"
-                    to={`/posts/categories/${_.kebabCase(category)}`}>
+                    to={`/updates/categories/${_.kebabCase(category)}`}>
                 {category}
               </Link>
             : null }
