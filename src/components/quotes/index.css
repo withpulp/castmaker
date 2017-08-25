@@ -1,0 +1,13 @@
+.quotes.figure .quote {
+  max-width: 30em;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: center;
+}
+
+.quotes.figure .quote .author {
+  display: block;
+  font-size: 75%;
+  font-weight: bold;
+  font-style: normal;
+}

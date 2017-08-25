@@ -1,0 +1,17 @@
+.social.share.figure {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.social.share.figure > div {
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.share-count {
+  text-align: center;
+}

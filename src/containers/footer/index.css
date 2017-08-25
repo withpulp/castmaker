@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  min-height: 50vh;
+  background-color: #d8dce4;
+  color: #3b3c3e;
+}
+
+.footer .affixed.section {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.footer .affixed.section .copyright.caption {
+  position: absolute;
+  bottom: 0.5em;
+  left: 1.25em;
+  margin: 0;
+  color: #8a8d92;
+  font-size: 75%;
+}
