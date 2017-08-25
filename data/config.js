@@ -10,6 +10,7 @@ module.exports = {
   siteFBAppID: "1825356251115265", // FB Application ID for using app insights
   googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
+  mailchimpAction: "//damir.us11.list-manage.com/subscribe/post?u=800bfb6e2a03c12de30b3eff1&amp;id=9a5ebe0d08", // Mailchimp form action url
   postDefaultCategoryID: "Updates", // Default category for posts.
   userName: "With Pulp", // Username to display in the author segment.
   userLocation: "New York, New York", // User location to display in the author segment.

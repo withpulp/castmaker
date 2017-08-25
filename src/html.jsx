@@ -50,6 +50,7 @@ class Html extends Component {
                id="___gatsby"
                dangerouslySetInnerHTML={{ __html: this.props.body }} />
           {this.props.postBodyComponents}
+          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
         </body>
       </html>
     )
