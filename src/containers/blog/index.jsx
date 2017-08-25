@@ -32,13 +32,13 @@ class Blog extends React.Component {
       <section className="blog section">
         { path === '/' ?
           <h1 className="title">
-            Latest Updates
+            Latest Update
           </h1>
         : null }
         <Posts data={posts} />
         { path === '/' ?
           <Link to="/updates" className="button">
-            View Past Updates
+            View All Updates
           </Link>
         : null }
       </section>
