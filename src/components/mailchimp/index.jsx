@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import './index.css';
 
 // @TODO: create or use a react npm package for mailchimp
 class Mailchimp extends React.Component {
@@ -34,7 +35,7 @@ class Mailchimp extends React.Component {
                    placeholder="Email Address" />
             <button type="submit"
                     id="mc-embedded-subscribe"
-                    className="submit button">
+                    className="primary submit button">
               Subscribe
             </button>
           </div>

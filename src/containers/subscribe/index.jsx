@@ -14,7 +14,7 @@ class Subscribe extends React.Component {
     return (
       <section className="subscribe section">
         <Mailchimp data={mailchimp} />
-        <SocialLinks config={config} labeled />
+        <SocialLinks config={config} />
       </section>
     )
   }

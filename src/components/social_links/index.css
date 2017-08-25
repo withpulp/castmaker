@@ -1,12 +1,11 @@
 .user.links.figure {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
 }
 
 .user.links.figure .button {
   margin: 0;
   margin-bottom: 1em;
-  margin-right: 1em;
 }

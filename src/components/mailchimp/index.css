@@ -1,0 +1,15 @@
+.mailchimp.figure {
+  max-width: 25em;
+  margin-bottom: 1em;
+}
+
+.mailchimp.figure .mailchimp.form {
+  margin-bottom: 0.5em;
+}
+
+.mailchimp.figure .disclaimer {
+  color: #8a8d92;
+  font-size: 65%;
+  text-align: left;
+  line-height: 1;
+}
