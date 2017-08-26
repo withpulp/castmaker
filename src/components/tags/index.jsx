@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 import './index.css';
 
-class Tags extends Component {
+class Tags extends React.Component {
   render() {
     const { tags } = this.props;
     return (

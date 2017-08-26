@@ -12,6 +12,7 @@ module.exports = {
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   mailchimpAction: "//damir.us11.list-manage.com/subscribe/post?u=800bfb6e2a03c12de30b3eff1&amp;id=9a5ebe0d08", // Mailchimp form action url
   postDefaultCategoryID: "Updates", // Default category for posts.
+  counterDate: "",
   userName: "With Pulp", // Username to display in the author segment.
   userLocation: "New York, New York", // User location to display in the author segment.
   userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.

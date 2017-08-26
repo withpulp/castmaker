@@ -3,6 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Markdown from '../containers/markdown';
+import Counter from '../containers/counter';
 import config from '../../data/config';
 
 class AboutIndex extends React.Component {
@@ -28,6 +29,7 @@ class AboutIndex extends React.Component {
         <Helmet title={`About | ${config.siteTitle}`} />
         <Hero data={hero} />
         <Markdown data={about} />
+        <Counter type="fluid" lazy />
       </div>
     );
   }

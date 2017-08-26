@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Subscribe from '../containers/subscribe/';
 import Blog from '../containers/blog/';
+import Counter from '../containers/counter';
 import SEO from '../components/seo/';
 import config from '../../data/config';
 
@@ -33,6 +34,7 @@ class Index extends React.Component {
         <Hero data={hero} />
         <Subscribe config={config} />
         <Blog posts={posts} location={location} />
+        <Counter type="fluid" />
       </div>
     );
   }

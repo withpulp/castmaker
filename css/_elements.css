@@ -234,6 +234,17 @@
 	box-shadow: 0 0 0 0.05em #aa5d4e;
 }
 
+/* form field group */
+.form .field.group {
+	font-size: 75%;
+}
+
+@media only screen and (min-width: 30em) {
+	.form .field.group {
+		font-size: 100%;
+	}
+}
+
 /* form field group input */
 .form .field.group .input {
 	flex: 1;
