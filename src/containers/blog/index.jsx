@@ -37,7 +37,7 @@ class Blog extends React.Component {
         : null }
         <Posts data={posts} />
         { path === '/' ?
-          <Link to="/updates" className="button">
+          <Link to="/updates" className="primary button">
             View All Updates
           </Link>
         : null }

@@ -9,8 +9,15 @@
 
 @media only screen and (min-width: 48em) {
   .mailchimp.figure .title {
-    margin-left: -0.5em;
-    margin-right: -0.5em;
+    margin-left: -2.75em;
+    margin-right: -2.75em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .mailchimp.figure .title {
+    margin-left: -5.25em;
+    margin-right: -5.25em;
   }
 }
 
@@ -19,6 +26,20 @@
   padding: 0.5em;
   border-top: 0.1em solid #b67468;
   color: #515254;
+}
+
+@media only screen and (min-width: 48em) {
+  .mailchimp.figure .title .message {
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .mailchimp.figure .title .message {
+    padding-left: 10.5em;
+    padding-right: 10.5em;
+  }
 }
 
 .mailchimp.figure .mailchimp.form {
