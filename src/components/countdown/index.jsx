@@ -3,11 +3,12 @@ import './index.css';
 
 class Countdown extends React.Component {
   render() {
-    const { figure } = this.props;
+    const { date, figure } = this.props;
+    console.log(new Date(date));
 
     return (
       <figure className={`${figure} countdown figure`}>
-        countdown
+        {date}
       </figure>
     );
   }

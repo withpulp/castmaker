@@ -5,7 +5,7 @@ import './index.css';
 
 class Counter extends React.Component {
   renderContent() {
-    const { type, lazy } = this.props;
+    const { type, date, lazy } = this.props;
     let content, figure;
 
     if (type === 'fluid') {
@@ -15,9 +15,9 @@ class Counter extends React.Component {
     }
 
     if (lazy) {
-      content = <Countup figure={figure} />
+      content = <Countup date={date} figure={figure} />
     } else {
-      content = <Countdown figure={figure} />
+      content = <Countdown date={date} figure={figure} />
     }
 
     return content;

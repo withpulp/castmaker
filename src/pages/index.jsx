@@ -34,7 +34,7 @@ class Index extends React.Component {
         <Hero data={hero} />
         <Subscribe config={config} />
         <Blog posts={posts} location={location} />
-        <Counter type="fluid" />
+        <Counter type="fluid" date={config.countdownDate} />
       </div>
     );
   }

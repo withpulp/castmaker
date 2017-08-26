@@ -3,11 +3,11 @@ import './index.css';
 
 class Countup extends React.Component {
   render() {
-    const { figure } = this.props;
+    const { date, figure } = this.props;
 
     return (
       <figure className={`${figure} countup figure`}>
-        countup
+        {date}
       </figure>
     );
   }
