@@ -17,6 +17,10 @@ class Index extends React.Component {
       title: config.siteTitle,
       caption: config.siteDescription
     };
+    const mailchimp = {
+      action: config.mailchimpAction,
+      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
+    };
 
     // @TODO: filter out post types in graphQL
     // http://graphql.org/learn/queries/
@@ -32,7 +36,7 @@ class Index extends React.Component {
         <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
         <SEO postEdges={posts} />
         <Hero data={hero} />
-        <Subscribe config={config} />
+        <Subscribe data={mailchimp} config={config} />
         <Blog posts={posts} location={location} />
         <Counter type="fluid" date={config.countdownDate} />
       </div>

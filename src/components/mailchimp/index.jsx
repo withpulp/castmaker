@@ -14,10 +14,12 @@ class Mailchimp extends React.Component {
     return (
       <figure className="mailchimp figure">
         { title ?
-          <h2 className="title">{title}</h2>
-        : null }
-        { message ?
-          <p className="message">{message}</p>
+          <h1 className="title">
+            {title}
+            { message ?
+              <small className="sub message">{message}</small>
+            : null }
+          </h1>
         : null }
 
         <form className="mailchimp form"

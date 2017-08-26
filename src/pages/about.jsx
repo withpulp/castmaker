@@ -3,6 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Markdown from '../containers/markdown';
+import Subscribe from '../containers/subscribe/';
 import Counter from '../containers/counter';
 import config from '../../data/config';
 
@@ -12,6 +13,12 @@ class AboutIndex extends React.Component {
     const hero = {
       title: 'What is Castmaker?',
       caption: config.siteDescription
+    };
+    const mailchimp = {
+      title: 'Can you dig it?',
+      message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
+      action: config.mailchimpAction,
+      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
     };
 
     // @TODO: get only about page data
@@ -29,6 +36,7 @@ class AboutIndex extends React.Component {
         <Helmet title={`About | ${config.siteTitle}`} />
         <Hero data={hero} />
         <Markdown data={about} />
+        <Subscribe data={mailchimp} config={config} />
         <Counter type="fluid" date={config.countupDate} lazy />
       </div>
     );

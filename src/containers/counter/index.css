@@ -1,5 +1,25 @@
 .counter.section {
   margin-bottom: 0;
-  background-color: #3b3c3e;
-  color: #fff;
+  border-bottom: 4em solid #3b3c3e;
+  background-color: #515254;
+  color: #d8dce4;
+  text-align: center;
+}
+
+.counter.section .figure {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.counter.section .figure .title {
+  margin-bottom: 0.5em;
+  color: #b67468;
+  text-transform: uppercase;
+}
+
+.counter.section .figure .message {
+  max-width: 25em;
+  margin: 1em auto 0;
+  color: #8a8d92;
+  font-weight: normal;
 }

@@ -1,0 +1,9 @@
+.countdown.figure .react-countdown-container h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  border: 0.15em solid #d8dce4;
+  color: #fff;
+  font-size: 125%;
+  font-weight: normal;
+}
