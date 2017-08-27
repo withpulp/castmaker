@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Markdown from '../containers/markdown';
 import Subscribe from '../containers/subscribe/';
-import Counter from '../containers/counter';
+import Heel from '../containers/heel';
 import config from '../../data/config';
 
 class AboutIndex extends React.Component {
@@ -22,7 +22,7 @@ class AboutIndex extends React.Component {
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
     };
-    const counter = {
+    const heel = {
       type: 'fluid',
       title: 'You\'ve Been Waiting For',
       date: config.countupDate,
@@ -45,7 +45,7 @@ class AboutIndex extends React.Component {
         <Hero data={hero} />
         <Markdown data={about} />
         <Subscribe data={subscribe} config={config} />
-        <Counter data={counter} lazy />
+        <Heel data={heel} lazy />
       </div>
     );
   }

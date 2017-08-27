@@ -1,0 +1,11 @@
+.heel.section {
+  text-align: center;
+}
+
+.fluid.heel.section {
+  margin-bottom: 0;
+  border-top: 0.5em solid #b67468;
+  border-bottom: 4em solid #3b3c3e;
+  background-color: #515254;
+  color: #d8dce4;
+}

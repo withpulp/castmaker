@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Subscribe from '../containers/subscribe/';
 import Blog from '../containers/blog/';
-import Counter from '../containers/counter';
+import Heel from '../containers/heel';
 import SEO from '../components/seo/';
 import config from '../../data/config';
 
@@ -23,7 +23,7 @@ class Index extends React.Component {
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
     };
-    const counter = {
+    const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
       date: config.countdownDate,
@@ -46,7 +46,7 @@ class Index extends React.Component {
         <Hero data={hero} />
         <Subscribe data={subscribe} config={config} />
         <Blog posts={posts} location={location} />
-        <Counter data={counter} />
+        <Heel data={heel} />
       </div>
     );
   }

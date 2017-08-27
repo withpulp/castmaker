@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Blog from '../containers/blog/';
 import Subscribe from '../containers/subscribe/';
-import Counter from '../containers/counter';
+import Heel from '../containers/heel';
 import config from '../../data/config';
 
 export default class CategoryTemplate extends React.Component {
@@ -22,7 +22,7 @@ export default class CategoryTemplate extends React.Component {
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
     };
-    const counter = {
+    const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
       date: config.countdownDate,
@@ -36,7 +36,7 @@ export default class CategoryTemplate extends React.Component {
           <Hero data={hero} />
           <Blog posts={posts} location={location} />
           <Subscribe data={subscribe} config={config} />
-          <Counter data={counter} />
+          <Heel data={heel} />
         </div>
       </div>
 

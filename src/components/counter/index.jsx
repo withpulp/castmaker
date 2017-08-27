@@ -1,6 +1,7 @@
 import React from 'react';
+import './index.css';
 
-class Countup extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,23 +12,43 @@ class Countup extends React.Component {
   }
 
   componentDidMount() {
-    this.increment = setInterval(this.updateTime, 1000);
+    this.counting = setInterval(this.updateTime, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.increment);
+    clearInterval(this.counting);
   }
 
   updateTime() {
-    var newTime = this.state.time + 1;
-    this.setState({time: newTime});
+    const { lazy } = this.props;
+
+    let time;
+    if (lazy) {
+      time = this.state.time + 1;
+    } else {
+      time = this.state.time - 1;
+    }
+
+    this.setState({time: time});
+
+    if (this.state.time === 0) {
+      clearInterval(this.counting);
+      // @TODO: replace/hide counter when time reaches zero
+      // or change counter to lazy mode
+    }
   }
 
   render() {
-    const { data, type } = this.props;
-    const pastDate = new Date(data.date);
+    const { data, type, lazy } = this.props;
+    const date = new Date(data.date);
     const currentDate = new Date();
-    const difference = currentDate - pastDate;
+
+    let difference;
+    if (lazy) {
+      difference = currentDate - date;
+    } else {
+      difference = date - currentDate;
+    }
 
     var days = parseInt(difference / (24 * 3600 * 1000));
     var hours = parseInt(difference / (3600 * 1000) - (days * 24));
@@ -35,11 +56,11 @@ class Countup extends React.Component {
     var seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
     return (
-      <figure className={`${type} countup figure`}>
+      <figure className={`${type} counter figure`}>
         { data.title ?
           <h1 className="title">{data.title}</h1>
         : null }
-        <figcaption className="countup caption">
+        <figcaption className="counter caption">
           <h2 className="days count">
             {days}
             <small className="label">
@@ -73,4 +94,4 @@ class Countup extends React.Component {
   }
 }
 
-export default Countup;
+export default Counter;

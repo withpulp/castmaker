@@ -29,6 +29,7 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 * Move CSS to Glamor (or other alternative)
   * create design module to update color scheme in one place
 * Configure typography to use modular scale on text
+* Update containers to render child components 
 
 ## Getting Started
 

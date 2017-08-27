@@ -1,9 +1,8 @@
 import React from 'react';
-import Countdown from '../../components/countdown/';
-import Countup from '../../components/countup/';
+import Counter from '../../components/counter/';
 import './index.css';
 
-class Counter extends React.Component {
+class Heel extends React.Component {
   renderContent() {
     const { data, lazy } = this.props;
     let figure, type;
@@ -15,9 +14,9 @@ class Counter extends React.Component {
     }
 
     if (lazy) {
-      figure = <Countup data={data} type={type} />
+      figure = <Counter data={data} type={type} lazy />
     } else {
-      figure = <Countdown data={data} type={type} />
+      figure = <Counter data={data} type={type} />
     }
 
     return figure;
@@ -27,11 +26,11 @@ class Counter extends React.Component {
     const { type } = this.props.data;
 
     return (
-      <section className={`${type} counter section`}>
+      <section className={`${type} heel section`}>
         { this.renderContent() }
       </section>
     )
   }
 }
 
-export default Counter;
+export default Heel;
