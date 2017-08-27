@@ -203,12 +203,14 @@
 	box-shadow: none;
 	background-color: transparent;
 	color: #3b3c3e;
+	transform: scale(1.05);
 }
 
 .button.transparent:active {
 	box-shadow: none;
 	background-color: transparent;
 	color: #515254;
+	transform: none;
 }
 
 /* form */

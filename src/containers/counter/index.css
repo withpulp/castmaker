@@ -1,10 +1,13 @@
 .counter.section {
+  text-align: center;
+}
+
+.fluid.counter.section {
   margin-bottom: 0;
   border-top: 0.5em solid #b67468;
   border-bottom: 4em solid #3b3c3e;
   background-color: #515254;
   color: #d8dce4;
-  text-align: center;
 }
 
 .counter.section .figure {
@@ -28,6 +31,11 @@
   font-size: 100%;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  transition: all 250ms;
+}
+
+.counter.section .figure .caption .count:hover {
+  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 30em) {

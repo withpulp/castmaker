@@ -6,6 +6,30 @@ A static page builder for coming soon pages powered by With Pulp.
 
 Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
+## Features
+
+* Blog
+  * Categories
+  * Tags
+  * Navigation
+  * Disqus
+  * Share
+* Subscribe
+  * Mailchimp (incomplete)
+    * form validation doesn't work
+    * needs to be refactored (currently depends on jquery)
+  * Social Media
+* Counter
+  * countdown from future date
+  * countup from past date
+
+## Backlog
+
+* Create modules for containers (edit copy for pages in one place)
+* Move CSS to Glamor (or other alternative)
+  * create design module to update color scheme in one place
+* Configure typography to use modular scale on text
+
 ## Getting Started
 
 Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed) by running from your CLI:
