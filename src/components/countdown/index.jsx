@@ -30,9 +30,9 @@ class Countdown extends React.Component {
 
   render() {
     const { data, type } = this.props;
-    const formattedDate = new Date(data.date);
+    const futureDate = new Date(data.date);
     const currentDate = new Date();
-    const difference = formattedDate - currentDate;
+    const difference = futureDate - currentDate;
 
     var days = parseInt(difference / (24 * 3600 * 1000));
     var hours = parseInt(difference / (3600 * 1000) - (days * 24));

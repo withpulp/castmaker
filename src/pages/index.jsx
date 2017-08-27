@@ -13,7 +13,7 @@ class Index extends React.Component {
     const { location, data } = this.props;
     const updates = data.allMarkdownRemark.edges;
 
-    // @TODO: import from content/data/pages.js
+    // @TODO: import from data modules
     const hero = {
       type: 'index',
       title: config.siteTitle,

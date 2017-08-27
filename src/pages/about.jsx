@@ -11,7 +11,7 @@ class AboutIndex extends React.Component {
   render() {
     const content = this.props.data.allMarkdownRemark.edges;
 
-    // @TODO: import from content/data/pages.js
+    // @TODO: import from data modules
     const hero = {
       title: 'What is Castmaker?',
       caption: config.siteDescription

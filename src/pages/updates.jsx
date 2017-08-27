@@ -3,6 +3,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Blog from '../containers/blog/';
+import Subscribe from '../containers/subscribe/';
+import Counter from '../containers/counter';
 import SEO from '../components/seo/';
 import config from '../../data/config';
 
@@ -10,9 +12,23 @@ class UpdatesIndex extends React.Component {
   render() {
     const { location, data } = this.props;
     const content = data.allMarkdownRemark.edges;
+
+    // @TODO: import from data modules
     const hero = {
       title: 'Development Updates',
       caption: 'These are the documents of our product\'s entire life cycle'
+    };
+    const subscribe = {
+      title: 'Can you dig it?',
+      message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
+      action: config.mailchimpAction,
+      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
+    };
+    const counter = {
+      type: 'fluid',
+      title: 'Ready To Launch In',
+      date: config.countdownDate,
+      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
     };
 
     // @TODO: filter out post types in graphQL
@@ -30,6 +46,8 @@ class UpdatesIndex extends React.Component {
         <SEO postEdges={posts} />
         <Hero data={hero} />
         <Blog posts={posts} location={location} />
+        <Subscribe data={subscribe} config={config} />
+        <Counter data={counter} />
       </div>
     );
   }
