@@ -1,16 +1,12 @@
 import React from 'react';
 
 class Countup extends React.Component {
-  // @TODO: create countup function
-  // use date prop to set starting date
-  // count up from starting date (day) to current date
-  // show count of days from starting date
   constructor(props) {
     super(props);
 
     this.updateTime = this.updateTime.bind(this);
     this.state = {
-      time: new Date(props.date) / 1000
+      time: new Date(props.data.date) / 1000
     }
   }
 
@@ -28,10 +24,10 @@ class Countup extends React.Component {
   }
 
   render() {
-    const { date, figure } = this.props;
-    const formattedDate = new Date(date);
+    const { data, type } = this.props;
+    const pastDate = new Date(data.date);
     const currentDate = new Date();
-    const difference = currentDate - formattedDate;
+    const difference = currentDate - pastDate;
 
     var days = parseInt(difference / (24 * 3600 * 1000));
     var hours = parseInt(difference / (3600 * 1000) - (days * 24));
@@ -39,8 +35,10 @@ class Countup extends React.Component {
     var seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
     return (
-      <figure className={`${figure} countup figure`}>
-        <h1 className="title">You've Been Waiting For</h1>
+      <figure className={`${type} countup figure`}>
+        { data.title ?
+          <h1 className="title">{data.title}</h1>
+        : null }
         <figcaption className="countup caption">
           <h2 className="days count">
             {days}
@@ -67,7 +65,9 @@ class Countup extends React.Component {
             </small>
           </h2>
         </figcaption>
-        <h6 className="message">Subscribe to our newsletter to receive progress reports about the development of this product.</h6>
+        { data.message ?
+          <h6 className="message">{data.message}</h6>
+        : null }
       </figure>
     );
   }

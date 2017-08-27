@@ -6,7 +6,7 @@ class Countdown extends React.Component {
 
     this.updateTime = this.updateTime.bind(this);
     this.state = {
-      time: new Date(props.date) / 1000
+      time: new Date(props.data.date) / 1000
     }
   }
 
@@ -22,16 +22,15 @@ class Countdown extends React.Component {
     var newTime = this.state.time - 1;
     this.setState({time: newTime});
 
-    if (this.state.time === 0){
+    if (this.state.time === 0) {
       clearInterval(this.decrement);
-
       // @TODO: replace/hide counter when time reaches zero
     }
   }
 
   render() {
-    const { date, figure } = this.props;
-    const formattedDate = new Date(date);
+    const { data, type } = this.props;
+    const formattedDate = new Date(data.date);
     const currentDate = new Date();
     const difference = formattedDate - currentDate;
 
@@ -41,8 +40,10 @@ class Countdown extends React.Component {
     var seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
     return (
-      <figure className={`${figure} countdown figure`}>
-        <h1 className="title">Ready To Launch In</h1>
+      <figure className={`${type} countdown figure`}>
+        { data.title ?
+          <h1 className="title">{data.title}</h1>
+        : null }
         <figcaption className="countdown caption">
           <h2 className="days count">
             {days}
@@ -69,7 +70,9 @@ class Countdown extends React.Component {
             </small>
           </h2>
         </figcaption>
-        <h6 className="message">Subscribe to our newsletter to receive progress reports about the development of this product.</h6>
+        { data.message ?
+          <h6 className="message">{data.message}</h6>
+        : null }
       </figure>
     );
   }

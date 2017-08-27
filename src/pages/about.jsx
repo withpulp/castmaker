@@ -10,15 +10,23 @@ import config from '../../data/config';
 class AboutIndex extends React.Component {
   render() {
     const content = this.props.data.allMarkdownRemark.edges;
+
+    // @TODO: import from content/data/pages.js
     const hero = {
       title: 'What is Castmaker?',
       caption: config.siteDescription
     };
-    const mailchimp = {
+    const subscribe = {
       title: 'Can you dig it?',
       message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
+    };
+    const counter = {
+      type: 'fluid',
+      title: 'You\'ve Been Waiting For',
+      date: config.countupDate,
+      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
     };
 
     // @TODO: get only about page data
@@ -36,8 +44,8 @@ class AboutIndex extends React.Component {
         <Helmet title={`About | ${config.siteTitle}`} />
         <Hero data={hero} />
         <Markdown data={about} />
-        <Subscribe data={mailchimp} config={config} />
-        <Counter type="fluid" date={config.countupDate} lazy />
+        <Subscribe data={subscribe} config={config} />
+        <Counter data={counter} lazy />
       </div>
     );
   }

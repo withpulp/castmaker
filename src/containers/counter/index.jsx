@@ -5,26 +5,26 @@ import './index.css';
 
 class Counter extends React.Component {
   renderContent() {
-    const { type, date, lazy } = this.props;
-    let content, figure;
+    const { data, lazy } = this.props;
+    let figure, type;
 
-    if (type === 'fluid') {
-      figure = 'container'
+    if (data.type === 'fluid') {
+      type = 'container'
     } else {
-      figure = null;
+      type = null;
     }
 
     if (lazy) {
-      content = <Countup date={date} figure={figure} />
+      figure = <Countup data={data} type={type} />
     } else {
-      content = <Countdown date={date} figure={figure} />
+      figure = <Countdown data={data} type={type} />
     }
 
-    return content;
+    return figure;
   }
 
   render() {
-    const { type } = this.props;
+    const { type } = this.props.data;
 
     return (
       <section className={`${type} counter section`}>

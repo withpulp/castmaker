@@ -11,23 +11,31 @@ import config from '../../data/config';
 class Index extends React.Component {
   render() {
     const { location, data } = this.props;
-    const content = data.allMarkdownRemark.edges;
+    const updates = data.allMarkdownRemark.edges;
+
+    // @TODO: import from content/data/pages.js
     const hero = {
       type: 'index',
       title: config.siteTitle,
       caption: config.siteDescription
     };
-    const mailchimp = {
+    const subscribe = {
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
+    };
+    const counter = {
+      type: 'fluid',
+      title: 'Ready To Launch In',
+      date: config.countdownDate,
+      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
     };
 
     // @TODO: filter out post types in graphQL
     // http://graphql.org/learn/queries/
     let posts = [];
-    content.forEach((item) => {
-      if (_.includes(item.node.frontmatter.type, 'post')) {
-        posts.push(item);
+    updates.forEach((post) => {
+      if (_.includes(post.node.frontmatter.type, 'post')) {
+        posts.push(post);
       }
     });
 
@@ -36,9 +44,9 @@ class Index extends React.Component {
         <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
         <SEO postEdges={posts} />
         <Hero data={hero} />
-        <Subscribe data={mailchimp} config={config} />
+        <Subscribe data={subscribe} config={config} />
         <Blog posts={posts} location={location} />
-        <Counter type="fluid" date={config.countdownDate} />
+        <Counter data={counter} />
       </div>
     );
   }
