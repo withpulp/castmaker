@@ -14,13 +14,39 @@
 
 .counter.section .figure .title {
   margin-bottom: 0.5em;
-  color: #d8dce4;
+  color: #fff;
   text-transform: uppercase;
+}
+
+.counter.section .figure .caption .count {
+  display: inline-block;
+  margin: 0 0.25em;
+  padding: 0.5em;
+  box-shadow: 0 0.05em 0.05em 0.05em #3b3c3e;
+  background-color: #aa5d4e;
+  color: #fff;
+  font-size: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media only screen and (min-width: 30em) {
+  .counter.section .figure .caption .count {
+    font-size: 150%;
+  }
+}
+
+.counter.section .figure .caption .count .label {
+  display: block;
+  margin-top: 0.25em;
+  color: #d8dce4;
+  font-size: 25%;
+  font-weight: normal;
 }
 
 .counter.section .figure .message {
   max-width: 25em;
   margin: 1em auto 0;
-  color: #8a8d92;
+  color: #d8dce4;
   font-weight: normal;
 }

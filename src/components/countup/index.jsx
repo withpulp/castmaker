@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 class Countup extends React.Component {
   // @TODO: create countup function
