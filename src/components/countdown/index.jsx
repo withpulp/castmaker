@@ -19,12 +19,13 @@ class Countdown extends React.Component {
   }
 
   updateTime() {
-    var newTime = this.state.time - 1; // minus one sec from initial time
+    var newTime = this.state.time - 1;
     this.setState({time: newTime});
 
     if (this.state.time === 0){
       clearInterval(this.decrement);
-      this.props.afterUnmount
+
+      // @TODO: replace/hide counter when time reaches zero
     }
   }
 
