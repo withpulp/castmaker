@@ -6,6 +6,7 @@ import SEO from '../components/seo/';
 import Hero from '../containers/hero/';
 import Article from '../containers/article';
 import Affixed from '../containers/affixed';
+import Heel from '../containers/heel';
 import config from '../../data/config';
 
 export default class PostTemplate extends React.Component {
@@ -26,6 +27,12 @@ export default class PostTemplate extends React.Component {
       caption: post.date,
       category: post.category
     }
+    const heel = {
+      type: 'fluid',
+      title: 'Ready To Launch In',
+      date: config.countdownDate,
+      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
+    };
 
     return (
       <div className="post template">
@@ -35,6 +42,7 @@ export default class PostTemplate extends React.Component {
           <Hero data={hero} />
           <Article data={postNode} location={location} slug={slug} />
           <Affixed data={postNode} location={location} type="bottom" />
+          <Heel data={heel} />
         </div>
       </div>
     );

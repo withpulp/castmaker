@@ -13,17 +13,18 @@
   display: inline-block;
   margin: 0 0.25em;
   padding: 0.5em;
-  box-shadow: 0 0.05em 0.05em 0.05em #3b3c3e;
+  box-shadow: 0 0 0 0.05em #3b3c3e inset;
   background-color: #aa5d4e;
   color: #fff;
-  font-size: 100%;
+  font-size: 75%;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 250ms;
 }
 
 .counter.figure .caption .count:hover {
-  transform: scale(1.05);
+  box-shadow: 0 0 0 0.05em #3b3c3e;
+  background-color: #b67468;
 }
 
 @media only screen and (min-width: 30em) {
