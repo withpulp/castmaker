@@ -132,6 +132,7 @@
   font-family: 'Ubuntu','Open Sans','Helvetica Neue','Helvetica','Arial','sans-serif';
   font-size: 2em;
   text-decoration: none;
+  text-transform: capitalize;
   transition: color 250ms;
 }
 

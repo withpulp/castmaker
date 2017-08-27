@@ -7,6 +7,7 @@ import Blog from '../containers/blog/';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
 import config from '../../data/config';
+import pages from '../../data/pages';
 
 class Index extends React.Component {
   render() {
@@ -55,7 +56,7 @@ class Index extends React.Component {
 export default Index;
 
 /* eslint no-undef: "off"*/
-export const pageQuery = graphql`
+export const dataQuery = graphql`
   query IndexQuery {
   allMarkdownRemark(
     limit: 2,

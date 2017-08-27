@@ -4,7 +4,7 @@ import './index.css';
 
 class Menu extends React.Component {
   render() {
-    const { location, action } = this.props;
+    const { pages, location, action } = this.props;
 
     return (
       <figure className="menu figure">
@@ -14,21 +14,14 @@ class Menu extends React.Component {
           <i className="menu icon"></i>
         </button>
         <nav className="navigation">
-          <Link className="link"
-                to="/"
-                onClick={action}>
-            Home
-          </Link>
-          <Link className="link"
-                to="/about"
-                onClick={action}>
-            About
-          </Link>
-          <Link className="link"
-                to="/updates"
-                onClick={action}>
-            Updates
-          </Link>
+          {pages.map(page => (
+            <Link key={page.id}
+                  className="link"
+                  to={page.path}
+                  onClick={action}>
+              {page.id}
+            </Link>
+          ))}
         </nav>
       </figure>
     );

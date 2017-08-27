@@ -25,18 +25,18 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
 ## Backlog
 
-* Create modules for containers (edit copy for pages in one place)
+* Create modules for containers and pages (to edit copy in single file)
 * Move CSS to Glamor (or other alternative)
   * create design module to update color scheme in one place
 * Configure typography to use modular scale on text
 * Refactor all containers for nesting of components
   * Rename Blog to Listing or Feed
   * Merge Markdown with Article
-  * Rename Subscribe to Contact
+  * Rename Subscribe to Contact or CTA
 * Refactor Footer condition to show quotes on all pages except post page
 * Move global element styles to typography
 * Edit markup of markdown HTML renders (see marked.renderer())
-* Find a way to send graphQl queries up the tree into Footer (may not be possible)
+* Find a way to send graphql queries up the tree into Footer (may not be possible)
 
 ## Getting Started
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import config from '../../data/config';
 import Header from '../containers/header/';
 import Footer from '../containers/footer/';
+import config from '../../data/config';
 import '../../css/_elements.css';
 import './index.css';
 
@@ -57,7 +57,7 @@ export default class MainLayout extends React.Component {
     return (
       <main className={`${this.state.menu} main layout`}>
         <Helmet>
-          <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
+          <title>{`${config.siteTitle} | ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <Header location={location} action={this.handleMenuState} />

@@ -42,7 +42,7 @@ class UpdatesIndex extends React.Component {
 
     return (
       <div className="updates page">
-        <Helmet title={`Posts | ${config.siteTitle}`} />
+        <Helmet title={`Updates | ${config.siteTitle}`} />
         <SEO postEdges={posts} />
         <Hero data={hero} />
         <Blog posts={posts} location={location} />
