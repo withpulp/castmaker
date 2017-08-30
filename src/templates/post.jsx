@@ -21,12 +21,7 @@ export default class PostTemplate extends React.Component {
     if (!post.id) {
       post.category_id = config.postDefaultCategoryID;
     }
-    const hero = {
-      type: 'post',
-      title: post.title,
-      caption: post.date,
-      category: post.category
-    }
+    
     const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
@@ -39,7 +34,15 @@ export default class PostTemplate extends React.Component {
         <Helmet title={`${post.title} | ${config.siteTitle}`} />
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div className="post page">
-          <Hero data={hero} />
+          <Hero figure
+                type="post"
+                level={2}
+                title={post.title}
+                caption={post.date}
+                button={{
+                  prefix: `${config.blogPostPrefix}/categories/`,
+                  label: post.category
+                }} />
           <Article data={postNode} location={location} slug={slug} />
           <Affixed data={postNode} location={location} type="bottom" />
           <Heel data={heel} />

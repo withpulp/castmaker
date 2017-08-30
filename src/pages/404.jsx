@@ -6,14 +6,12 @@ import config from '../../data/config';
 
 class ErrorIndex extends React.Component {
   render() {
-    const hero = {
-      title: '404',
-      caption: 'You are lost'
-    };
     return (
       <div className="error page">
         <Helmet title={`404 | ${config.siteTitle}`} />
-        <Hero data={hero} />
+        <Hero title={config.errorTitle}
+              caption={config.errorCaption}
+              figure />
         <section className="redirect section">
           <figure className="message figue">
             <p className="message">

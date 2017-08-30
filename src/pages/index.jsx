@@ -15,14 +15,8 @@ class Index extends React.Component {
   render() {
     const { location, data } = this.props;
     const updates = data.allMarkdownRemark.edges;
-    const page = pages.filter((page) => { return page.id === 'index'; })[0];
+    const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    // @TODO: import from data modules
-    const hero = {
-      type: 'index',
-      title: config.siteTitle,
-      caption: config.siteDescription
-    };
     const subscribe = {
       action: config.mailchimpAction,
       disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'

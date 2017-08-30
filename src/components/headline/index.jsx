@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import Link from 'gatsby-link';
 import config from '../../../data/config';
 import './index.css';
 
@@ -8,10 +9,10 @@ class Headline extends React.Component {
     let button;
 
     if (this.props.button) {
-      const { type, prefix, label } = this.props.button;
+      const { prefix, label } = this.props.button;
 
       button = (
-        <Link className={`${type} link`}
+        <Link className="headline link"
               to={`${prefix}${_.kebabCase(label)}`}>
           { label }
         </Link>

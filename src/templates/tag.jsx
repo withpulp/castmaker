@@ -12,10 +12,6 @@ export default class TagTemplate extends React.Component {
     const tag = this.props.pathContext.tag;
     const posts = this.props.data.allMarkdownRemark.edges;
 
-    // @TODO: import from data modules
-    const hero = {
-      title: tag
-    };
     const subscribe = {
       title: 'Can you dig it?',
       message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
@@ -31,9 +27,11 @@ export default class TagTemplate extends React.Component {
 
     return (
       <div className="tag template">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <Helmet title={`Updates tagged as "${tag}" | ${config.siteTitle}`} />
         <div className="tag page">
-          <Hero data={hero} />
+          <Hero figure
+                level={1}
+                title={tag} />
           <Blog posts={posts} location={location} />
           <Subscribe data={subscribe} config={config} />
           <Heel data={heel} />

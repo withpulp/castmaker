@@ -1,6 +1,6 @@
 const pages = [
 	{
-    id: 'index',
+    id: 'home',
 		path: '/',
     hero: {
       type: 'jumbo',
@@ -17,7 +17,11 @@ const pages = [
     },
     listing: {
       type: 'posts',
-      prefix: '/updates'
+      prefix: '/updates',
+			headline: {
+				level: 1,
+				title: 'Latest Update'
+			}
     },
     heel: {
       type: 'fluid'

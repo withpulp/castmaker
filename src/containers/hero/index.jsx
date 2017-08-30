@@ -6,13 +6,19 @@ import './index.css';
 
 class Hero extends React.Component {
   renderHeadline() {
-    const { title, caption } = this.props;
-    let headline;
+    const { level, title, caption, button } = this.props;
+    let headline, setLevel;
+
+    if (level) {
+      setLevel = level;
+    } else {
+      setLevel = 1;
+    }
 
     if (title) {
-      headline = <Headline level={1} title={title} caption={caption} />
+      headline = <Headline level={setLevel} title={title} caption={caption} button={button} />
     } else {
-      headline = <Headline level={1} title={config.siteTitle} caption={config.siteDescription} />
+      headline = <Headline level={setLevel} title={config.siteTitle} caption={config.siteDescription} />
     }
 
     return headline;
@@ -27,62 +33,6 @@ class Hero extends React.Component {
       return null;
     }
   }
-
-  // renderFigure() {
-  //   const { type, title, caption, category } = this.props.data;
-  //
-  //   let figure;
-  //
-  //   if (type === 'index') {
-  //     figure = (
-  //       <figure className="index hero figure">
-  //         <img className="logo image" src={logo} />
-  //         <h1 className="title">
-  //           { title }
-  //           { caption ?
-  //             <small className="sub">
-  //               { caption }
-  //             </small>
-  //           : null }
-  //         </h1>
-  //       </figure>
-  //     );
-  //   } else if (type === 'post') {
-  //     figure = (
-  //       <figure className="post hero figure">
-  //         <h2 className="title">
-  //           { title }
-  //           { caption ?
-  //             <small className="sub">
-  //               { caption }
-  //             </small>
-  //           : null }
-  //           { category ?
-  //             <Link className="category link"
-  //                   to={`/updates/categories/${_.kebabCase(category)}`}>
-  //               {category}
-  //             </Link>
-  //           : null }
-  //         </h2>
-  //       </figure>
-  //     );
-  //   } else {
-  //     figure = (
-  //       <figure className="hero figure">
-  //         <h1 className="title">
-  //           { title }
-  //           { caption ?
-  //             <small className="sub">
-  //               { caption }
-  //             </small>
-  //           : null }
-  //         </h1>
-  //       </figure>
-  //     );
-  //   }
-  //
-  //   return figure;
-  // }
 
   render() {
     const { type, figure, children } = this.props;

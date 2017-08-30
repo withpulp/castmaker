@@ -12,10 +12,6 @@ export default class CategoryTemplate extends React.Component {
     const category = this.props.pathContext.category;
     const posts = this.props.data.allMarkdownRemark.edges;
 
-    // @TODO: import from data modules
-    const hero = {
-      title: category
-    };
     const subscribe = {
       title: 'Can you dig it?',
       message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
@@ -31,9 +27,11 @@ export default class CategoryTemplate extends React.Component {
 
     return (
       <div className="category template">
-        <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
+        <Helmet title={`Updates in category "${category}" | ${config.siteTitle}`} />
         <div className="category page">
-          <Hero data={hero} />
+          <Hero figure
+                level={1}
+                title={category} />
           <Blog posts={posts} location={location} />
           <Subscribe data={subscribe} config={config} />
           <Heel data={heel} />

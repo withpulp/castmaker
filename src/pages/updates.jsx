@@ -7,17 +7,14 @@ import Subscribe from '../containers/subscribe/';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
 import config from '../../data/config';
+import pages from '../../data/pages';
 
 class UpdatesIndex extends React.Component {
   render() {
     const { location, data } = this.props;
     const content = data.allMarkdownRemark.edges;
+    const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    // @TODO: import from data modules
-    const hero = {
-      title: 'Development Updates',
-      caption: 'These are the documents of our product\'s entire life cycle'
-    };
     const subscribe = {
       title: 'Can you dig it?',
       message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
@@ -44,7 +41,9 @@ class UpdatesIndex extends React.Component {
       <div className="updates page">
         <Helmet title={`Updates | ${config.siteTitle}`} />
         <SEO postEdges={posts} />
-        <Hero data={hero} />
+        <Hero figure={page.hero.figure}
+              title={page.hero.headline.title}
+              caption={page.hero.headline.caption} />
         <Blog posts={posts} location={location} />
         <Subscribe data={subscribe} config={config} />
         <Heel data={heel} />

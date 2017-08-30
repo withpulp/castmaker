@@ -6,16 +6,14 @@ import Markdown from '../containers/markdown';
 import Subscribe from '../containers/subscribe/';
 import Heel from '../containers/heel';
 import config from '../../data/config';
+import pages from '../../data/pages';
 
 class AboutIndex extends React.Component {
   render() {
+    const { location } = this.props;
     const content = this.props.data.allMarkdownRemark.edges;
+    const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    // @TODO: import from data modules
-    const hero = {
-      title: 'What is Castmaker?',
-      caption: config.siteDescription
-    };
     const subscribe = {
       title: 'Can you dig it?',
       message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
@@ -42,7 +40,9 @@ class AboutIndex extends React.Component {
     return (
       <div className="about page">
         <Helmet title={`About | ${config.siteTitle}`} />
-        <Hero data={hero} />
+        <Hero figure={page.hero.figure}
+              title={page.hero.headline.title}
+              caption={page.hero.headline.caption} />
         <Markdown data={about} />
         <Subscribe data={subscribe} config={config} />
         <Heel data={heel} lazy />

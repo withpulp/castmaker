@@ -1,5 +1,6 @@
 module.exports = {
   blogPostDir: "posts", // The name of directory that contains your posts.
+  blogPostPrefix: "/updates",
   siteTitle: "Castmaker", // Site title.
   siteTitleAlt: "with-pulp-castmaker", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
@@ -37,6 +38,8 @@ module.exports = {
     }
   ],
   copyright: "Copyright © 2017. With Pulp", // Copyright string for the footer of the website and RSS feed.
+  errorTitle: '404', // Title for 404 page
+  errorCaption: 'You are lost', // Caption for 404 page
   themeColor: "#aa5d4e", // Used for setting manifest and progress theme colors.
   backgroundColor: "#fff" // Used for setting manifest background color.
 };
