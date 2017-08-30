@@ -6,6 +6,8 @@ import Subscribe from '../containers/subscribe/';
 import Blog from '../containers/blog/';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
+import Headline from '../components/headline';
+import logo from '!file-loader!../../static/logos/logo-1024.png';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
@@ -13,6 +15,7 @@ class Index extends React.Component {
   render() {
     const { location, data } = this.props;
     const updates = data.allMarkdownRemark.edges;
+    const page = pages.filter((page) => { return page.id === 'index'; })[0];
 
     // @TODO: import from data modules
     const hero = {
@@ -44,7 +47,13 @@ class Index extends React.Component {
       <div className="index page">
         <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
         <SEO postEdges={posts} />
-        <Hero data={hero} />
+        <Hero type={page.hero.type} figure={page.hero.figure}>
+          <img className="logo image" src={logo} />
+          <Headline type={page.hero.headline.type}
+                    level={page.hero.headline.level}
+                    title={page.hero.headline.title}
+                    caption={page.hero.headline.caption} />
+        </Hero>
         <Subscribe data={subscribe} config={config} />
         <Blog posts={posts} location={location} />
         <Heel data={heel} />

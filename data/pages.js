@@ -4,9 +4,13 @@ const pages = [
 		path: '/',
     hero: {
       type: 'jumbo',
-      image: true,
-      title: true,
-      caption: true
+			figure: true,
+			headline: {
+				type: 'centered',
+				level: 1,
+	      title: true,
+	      caption: true
+			}
     },
     cta: {
       type: 'centered'
@@ -23,8 +27,12 @@ const pages = [
     id: 'about',
 		path: '/about',
     hero: {
-      title: 'What is Castmaker?',
-      caption: true
+			figure: true,
+			headline: {
+				level: 1,
+				title: 'What is Castmaker?',
+	      caption: true
+			}
     },
     cta: {
       type: 'centered'
@@ -37,8 +45,12 @@ const pages = [
     id: 'updates',
 		path: '/updates',
     hero: {
-      title: 'What is Castmaker?',
-      caption: true
+			figure: true,
+			headline: {
+				level: 1,
+				title: 'Development Updates',
+	      caption: 'These are the documents of our product\'s entire life cycle'
+			}
     },
     listing: {
       type: 'posts',

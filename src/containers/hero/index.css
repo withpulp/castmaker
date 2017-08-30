@@ -29,27 +29,27 @@
   text-transform: initial;
 }
 
-/* index hero */
-.index.hero.section {
+/* jumbo hero */
+.jumbo.hero.section {
   min-height: 75vh;
   text-align: center;
 }
 
-.index.hero.section .hero.figure .logo {
+.jumbo.hero.section .hero.figure .logo {
   max-width: 10em;
 }
 
 @media only screen and (min-width: 48em) {
-  .index.hero.section .hero.figure .logo {
+  .jumbo.hero.section .hero.figure .logo {
     max-width: 15em;
   }
 }
 
-.index.hero.section .hero.figure .title {
+.jumbo.hero.section .hero.figure .title {
   margin-top: 0;
 }
 
-.index.hero.section .hero.figure .title .sub {
+.jumbo.hero.section .hero.figure .title .sub {
   max-width: 20em;
 }
 
