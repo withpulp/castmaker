@@ -72,7 +72,7 @@ const pages = [
     heel: {
       type: 'fluid'
     }
-	},
+	}
 ];
 
 export default pages;

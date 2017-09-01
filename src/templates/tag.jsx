@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
@@ -7,12 +8,31 @@ import Heel from '../containers/heel';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
 import config from '../../data/config';
+import templates from '../../data/templates';
 
 export default class TagTemplate extends React.Component {
   render() {
-    const { location } = this.props;
-    const tag = this.props.pathContext.tag;
-    const posts = this.props.data.allMarkdownRemark.edges;
+    const { data, pathContext, location } = this.props;
+    const template = templates.filter((template) => { return template.id === 'tag'; })[0];
+    const tag = pathContext.tag;
+    const posts = data.allMarkdownRemark.edges;
+
+    let title;
+    if (template.hero.headline.title) {
+      title = template.hero.headline.title;
+    } else {
+      title = tag;
+    }
+
+    let button;
+    if (template.listing.button) {
+      button = {
+        type: template.listing.button.type,
+        label: template.listing.button.label
+      }
+    } else {
+      button = false;
+    }
 
     const heel = {
       type: 'fluid',
@@ -22,21 +42,18 @@ export default class TagTemplate extends React.Component {
     };
 
     return (
-      <div className="tag template">
-        <Helmet title={`Updates tagged as "${tag}" | ${config.siteTitle}`} />
-        <div className="tag page">
-          <Hero figure
-                level={1}
-                title={tag} />
-          <Listing type="posts"
-                   figure="posts"
-                   prefix="/updates"
-                   button={{
-                     type: 'primary link',
-                     label: 'View All Updates'
-                   }}
+      <div className={`${template.id} template`}>
+        <Helmet title={`${_.capitalize(template.type)} tagged as "${tag}" | ${config.siteTitle}`} />
+        <div className={`${template.id} page`}>
+          <Hero figure={template.hero.figure}
+                level={template.hero.headline.level}
+                title={title} />
+          <Listing type={template.listing.type}
+                   figure={template.listing.figure}
+                   prefix={template.listing.prefix}
+                   button={button}
                    list={posts} />
-          <CTA type="centered">
+          <CTA type={template.cta.type}>
             <Mailchimp title={config.subscribeTitle}
                        caption={config.subscribeCaption}
                        action={config.mailchimpAction}

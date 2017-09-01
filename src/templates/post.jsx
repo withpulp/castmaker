@@ -8,16 +8,29 @@ import Article from '../containers/article';
 import Affixed from '../containers/affixed';
 import Heel from '../containers/heel';
 import config from '../../data/config';
+import templates from '../../data/templates';
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pathContext;
-    const location = this.props.location;
-    const postNode = this.props.data.markdownRemark;
-    const post = postNode.frontmatter;
+    const { pathContext, location, data } = this.props;
+    const template = templates.filter((template) => { return template.id === 'post'; })[0];
+    const postNode = data.markdownRemark;
+
+    let post = postNode.frontmatter;
     if (!post.id) {
-      post.id = slug;
+      post.id = pathContext;
       post.category_id = config.postDefaultCategoryID;
+    }
+
+    let button;
+    if (post.category) {
+      button = {
+        type: template.hero.headline.button.type,
+        prefix: `${config.blogPostPrefix}${template.hero.headline.button.prefix}`,
+        label: post.category
+      }
+    } else {
+      button = false;
     }
 
     const heel = {
@@ -28,20 +41,17 @@ export default class PostTemplate extends React.Component {
     };
 
     return (
-      <div className="post template">
+      <div className={`${template.id} template`}>
         <Helmet title={`${post.title} | ${config.siteTitle}`} />
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <div className="post page">
+        <SEO postPath={pathContext} postNode={postNode} postSEO />
+        <div className={`${template.id} page`}>
           <Hero figure
-                type="post"
-                level={2}
+                type={template.hero.type}
+                level={template.hero.headline.level}
                 title={post.title}
                 caption={post.date}
-                button={{
-                  prefix: `${config.blogPostPrefix}/categories/`,
-                  label: post.category
-                }} />
-          <Article data={postNode} location={location} slug={slug} />
+                button={button} />
+          <Article data={postNode} location={location} slug={pathContext} />
           <Affixed data={postNode} location={location} type="bottom" />
           <Heel data={heel} />
         </div>

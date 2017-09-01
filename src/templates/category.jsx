@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
@@ -7,14 +8,31 @@ import Heel from '../containers/heel';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
 import config from '../../data/config';
-
-// @TODO: config listing with data from data/posts
+import templates from '../../data/templates';
 
 export default class CategoryTemplate extends React.Component {
   render() {
-    const { location } = this.props;
-    const category = this.props.pathContext.category;
-    const posts = this.props.data.allMarkdownRemark.edges;
+    const { data, pathContext, location } = this.props;
+    const template = templates.filter((template) => { return template.id === 'category'; })[0];
+    const category = pathContext.category;
+    const posts = data.allMarkdownRemark.edges;
+
+    let title;
+    if (template.hero.headline.title) {
+      title = template.hero.headline.title;
+    } else {
+      title = category;
+    }
+
+    let button;
+    if (template.listing.button) {
+      button = {
+        type: template.listing.button.type,
+        label: template.listing.button.label
+      }
+    } else {
+      button = false;
+    }
 
     const heel = {
       type: 'fluid',
@@ -24,21 +42,18 @@ export default class CategoryTemplate extends React.Component {
     };
 
     return (
-      <div className="category template">
-        <Helmet title={`Updates in category "${category}" | ${config.siteTitle}`} />
-        <div className="category page">
-          <Hero figure
-                level={1}
-                title={category} />
-          <Listing type="posts"
-                   figure="posts"
-                   prefix="/updates"
-                   button={{
-                     type: 'primary link',
-                     label: 'View All Updates'
-                   }}
+      <div className={`${template.id} template`}>
+        <Helmet title={`${_.capitalize(template.type)} in category "${category}" | ${config.siteTitle}`} />
+        <div className={`${template.id} page`}>
+          <Hero figure={template.hero.figure}
+                level={template.hero.headline.level}
+                title={title} />
+          <Listing type={template.listing.type}
+                   figure={template.listing.figure}
+                   prefix={template.listing.prefix}
+                   button={button}
                    list={posts} />
-          <CTA type="centered">
+          <CTA type={template.cta.type}>
             <Mailchimp title={config.subscribeTitle}
                        caption={config.subscribeCaption}
                        action={config.mailchimpAction}
