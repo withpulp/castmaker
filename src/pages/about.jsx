@@ -3,8 +3,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
 import Markdown from '../containers/markdown';
-import Subscribe from '../containers/subscribe/';
+import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
+import Mailchimp from '../components/mailchimp';
+import SocialLinks from '../components/social_links';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
@@ -14,12 +16,6 @@ class AboutIndex extends React.Component {
     const content = this.props.data.allMarkdownRemark.edges;
     const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    const subscribe = {
-      title: 'Can you dig it?',
-      message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
-      action: config.mailchimpAction,
-      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
-    };
     const heel = {
       type: 'fluid',
       title: 'You\'ve Been Waiting For',
@@ -38,13 +34,19 @@ class AboutIndex extends React.Component {
     });
 
     return (
-      <div className="about page">
-        <Helmet title={`About | ${config.siteTitle}`} />
+      <div className={`${page.id} page`}>
+        <Helmet title={`${_.capitalize(page.id)} | ${config.siteTitle}`} />
         <Hero figure={page.hero.figure}
               title={page.hero.headline.title}
               caption={page.hero.headline.caption} />
         <Markdown data={about} />
-        <Subscribe data={subscribe} config={config} />
+        <CTA type={page.cta.type}>
+          <Mailchimp title={config.subscribeTitle}
+                     caption={config.subscribeCaption}
+                     action={config.mailchimpAction}
+                     disclaimer={config.subscribeDisclaimer} />
+          <SocialLinks links={config.userLinks} />
+        </CTA>
         <Heel data={heel} lazy />
       </div>
     );

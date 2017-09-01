@@ -16,12 +16,10 @@ export default class PostTemplate extends React.Component {
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     if (!post.id) {
-      post.id = this.props.location.pathname;
-    }
-    if (!post.id) {
+      post.id = slug;
       post.category_id = config.postDefaultCategoryID;
     }
-    
+
     const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',

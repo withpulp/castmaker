@@ -2,25 +2,21 @@ import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
-import Blog from '../containers/blog/';
-import Subscribe from '../containers/subscribe/';
+import Listing from '../containers/listing/';
+import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
+import Mailchimp from '../components/mailchimp';
+import SocialLinks from '../components/social_links';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
 class UpdatesIndex extends React.Component {
   render() {
     const { location, data } = this.props;
-    const content = data.allMarkdownRemark.edges;
+    const posts = data.allMarkdownRemark.edges;
     const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    const subscribe = {
-      title: 'Can you dig it?',
-      message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
-      action: config.mailchimpAction,
-      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
-    };
     const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
@@ -30,22 +26,33 @@ class UpdatesIndex extends React.Component {
 
     // @TODO: filter out post types in graphQL
     // http://graphql.org/learn/queries/
-    let posts = [];
-    content.forEach((item) => {
-      if (_.includes(item.node.frontmatter.type, 'post')) {
-        posts.push(item);
+    let updates = [];
+    posts.forEach((post) => {
+      if (_.includes(post.node.frontmatter.type, 'post')) {
+        updates.push(post);
       }
     });
 
     return (
-      <div className="updates page">
-        <Helmet title={`Updates | ${config.siteTitle}`} />
+      <div className={`${page.id} page`}>
+        <Helmet title={`${_.capitalize(page.id)} | ${config.siteTitle}`} />
         <SEO postEdges={posts} />
         <Hero figure={page.hero.figure}
               title={page.hero.headline.title}
               caption={page.hero.headline.caption} />
-        <Blog posts={posts} location={location} />
-        <Subscribe data={subscribe} config={config} />
+        <Listing type={page.listing.type}
+                 figure={page.listing.figure}
+                 prefix={page.listing.prefix}
+                 button={page.listing.button}
+                 headline={page.listing.headline}
+                 list={updates} />
+        <CTA type={page.cta.type}>
+          <Mailchimp title={config.subscribeTitle}
+                     caption={config.subscribeCaption}
+                     action={config.mailchimpAction}
+                     disclaimer={config.subscribeDisclaimer} />
+          <SocialLinks links={config.userLinks} />
+        </CTA>
         <Heel data={heel} />
       </div>
     );

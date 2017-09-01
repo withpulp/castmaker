@@ -17,6 +17,11 @@ const pages = [
     },
     listing: {
       type: 'posts',
+			figure: true,
+			button: {
+				type: 'primary link',
+				label: 'View All Updates'
+			},
       prefix: '/updates',
 			headline: {
 				level: 1,
@@ -58,6 +63,7 @@ const pages = [
     },
     listing: {
       type: 'posts',
+			figure: 'posts',
       prefix: '/updates'
     },
     cta: {

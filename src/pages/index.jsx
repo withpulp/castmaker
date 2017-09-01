@@ -2,11 +2,13 @@ import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
-import Subscribe from '../containers/subscribe/';
-import Blog from '../containers/blog/';
+import CTA from '../containers/cta/';
+import Listing from '../containers/listing/';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
 import Headline from '../components/headline';
+import Mailchimp from '../components/mailchimp';
+import SocialLinks from '../components/social_links';
 import logo from '!file-loader!../../static/logos/logo-1024.png';
 import config from '../../data/config';
 import pages from '../../data/pages';
@@ -14,13 +16,9 @@ import pages from '../../data/pages';
 class Index extends React.Component {
   render() {
     const { location, data } = this.props;
-    const updates = data.allMarkdownRemark.edges;
+    const posts = data.allMarkdownRemark.edges;
     const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    const subscribe = {
-      action: config.mailchimpAction,
-      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
-    };
     const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
@@ -30,15 +28,16 @@ class Index extends React.Component {
 
     // @TODO: filter out post types in graphQL
     // http://graphql.org/learn/queries/
-    let posts = [];
-    updates.forEach((post) => {
+    let updates = [];
+    posts.forEach((post) => {
       if (_.includes(post.node.frontmatter.type, 'post')) {
-        posts.push(post);
+        updates.push(post);
       }
     });
 
+    // @TODO: create image component
     return (
-      <div className="index page">
+      <div className={`${page.id} page`}>
         <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
         <SEO postEdges={posts} />
         <Hero type={page.hero.type} figure={page.hero.figure}>
@@ -48,8 +47,17 @@ class Index extends React.Component {
                     title={page.hero.headline.title}
                     caption={page.hero.headline.caption} />
         </Hero>
-        <Subscribe data={subscribe} config={config} />
-        <Blog posts={posts} location={location} />
+        <CTA type={page.cta.type}>
+          <Mailchimp action={config.mailchimpAction}
+                     disclaimer={config.subscribeDisclaimer} />
+          <SocialLinks links={config.userLinks} />
+        </CTA>
+        <Listing type={page.listing.type}
+                 figure={page.listing.figure}
+                 prefix={page.listing.prefix}
+                 button={page.listing.button}
+                 headline={page.listing.headline}
+                 list={updates} />
         <Heel data={heel} />
       </div>
     );

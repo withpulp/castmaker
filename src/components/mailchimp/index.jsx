@@ -9,15 +9,15 @@ class Mailchimp extends React.Component {
   }
 
   render() {
-    const { title, message, action, disclaimer } = this.props.data;
+    const { title, caption, action, disclaimer } = this.props;
 
     return (
       <figure className="mailchimp figure">
         { title ?
           <h1 className="title">
             {title}
-            { message ?
-              <small className="sub message">{message}</small>
+            { caption ?
+              <small className="sub message">{caption}</small>
             : null }
           </h1>
         : null }

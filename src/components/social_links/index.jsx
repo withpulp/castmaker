@@ -2,13 +2,12 @@ import React from 'react';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import './index.css';
 
-// @TODO: add icons (font awesome)
+// @TODO: GA event tracking for outbound links
 class SocialLinks extends React.Component {
   getLinkElements() {
-    const { config, labeled } = this.props;
-    const userLinks = config.userLinks;
+    const { links, labeled } = this.props;
 
-    return userLinks.map(link => (
+    return links.map(link => (
       labeled ?
         <a className="button"
            key={link.label}
@@ -26,9 +25,9 @@ class SocialLinks extends React.Component {
     ));
   }
   render() {
-    const { userLinks } = this.props.config;
+    const { links } = this.props;
 
-    if (userLinks) {
+    if (links) {
       return (
         <figure className="user links figure">
           { this.getLinkElements() }

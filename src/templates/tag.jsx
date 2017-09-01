@@ -1,9 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
-import Blog from '../containers/blog/';
-import Subscribe from '../containers/subscribe/';
+import Listing from '../containers/listing/';
+import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
+import Mailchimp from '../components/mailchimp';
+import SocialLinks from '../components/social_links';
 import config from '../../data/config';
 
 export default class TagTemplate extends React.Component {
@@ -12,12 +14,6 @@ export default class TagTemplate extends React.Component {
     const tag = this.props.pathContext.tag;
     const posts = this.props.data.allMarkdownRemark.edges;
 
-    const subscribe = {
-      title: 'Can you dig it?',
-      message: 'If you can, then you ain\'t no sucka! Give us your email so we can send you more information.',
-      action: config.mailchimpAction,
-      disclaimer: 'We will send regular updates to your inbox at no cost, you can unsubscribe at any time.'
-    };
     const heel = {
       type: 'fluid',
       title: 'Ready To Launch In',
@@ -32,8 +28,21 @@ export default class TagTemplate extends React.Component {
           <Hero figure
                 level={1}
                 title={tag} />
-          <Blog posts={posts} location={location} />
-          <Subscribe data={subscribe} config={config} />
+          <Listing type="posts"
+                   figure="posts"
+                   prefix="/updates"
+                   button={{
+                     type: 'primary link',
+                     label: 'View All Updates'
+                   }}
+                   list={posts} />
+          <CTA type="centered">
+            <Mailchimp title={config.subscribeTitle}
+                       caption={config.subscribeCaption}
+                       action={config.mailchimpAction}
+                       disclaimer={config.subscribeDisclaimer} />
+            <SocialLinks links={config.userLinks} />
+          </CTA>
           <Heel data={heel} />
         </div>
       </div>

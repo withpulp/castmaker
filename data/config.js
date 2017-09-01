@@ -12,6 +12,9 @@ module.exports = {
   googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   mailchimpAction: "//damir.us11.list-manage.com/subscribe/post?u=800bfb6e2a03c12de30b3eff1&amp;id=9a5ebe0d08", // Mailchimp form action url
+  subscribeTitle: "Keep Up With Us", // Subscribe Form title.
+  subscribeCaption: "Enter your email into the form below and hit subscribe to receive monthly newsletters.", // Subscribe Form caption.
+  subscribeDisclaimer: "We will send regular updates to your inbox at no cost, you can unsubscribe at any time.", // Subscribe Form disclaimer message.
   postDefaultCategoryID: "Updates", // Default category for posts.
   countupDate: "January 1, 2017",
   countdownDate: "January 1, 2020",

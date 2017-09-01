@@ -55,57 +55,6 @@
 	}
 }
 
-/* list */
-.list {
-	display: block;
-	position: relative;
-	margin: 0;
-	margin-left: 1em;
-	padding: 0;
-}
-
-.list .item {
-	position: relative;
-	padding: 0;
-}
-
-/* flex list */
-.list.flex {
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: -1em;
-	list-style: none;
-}
-
-.list.flex .item {
-	flex: 1;
-	width: auto;
-	padding-left: 1em;
-}
-
-@media only screen and (min-width: 62em) {
-	.list.flex.contained {
-		width: 220em;
-	}
-}
-
-/* inline list */
-.list.inline {
-	display: inline;
-	list-style: none;
-	margin: 0;
-}
-
-.list.inline .item {
-	display: inline-block;
-}
-
-/* unstyled list */
-.list.unstyled {
-	margin: 0;
-	list-style: none;
-}
-
 /* image */
 .image {
 	display: block;
@@ -123,78 +72,6 @@
 /* link */
 .link {
 	position: relative;
-}
-
-/* button */
-.button {
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	margin: 1em auto;
-	padding: 0.75em 1em;
-	outline: 0;
-	border: 0;
-	box-shadow: 0 0.05em 0 0.05em #8a8d92;
-	background-color: #d8dce4;
-	color: #3b3c3e;
-	font-family: 'Ubuntu','Open Sans','Helvetica Neue','Helvetica','Arial','sans-serif';
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	line-height: 1;
-	transition: all 250ms;
-}
-
-.button:hover {
-	box-shadow: 0 0 0 0.05em #aa5d4e;
-	background-color: #b67468;
-	color: #fff;
-	text-decoration: none;
-}
-
-.button:active {
-	box-shadow: 0 0 0 0.05em #515254;
-	background-color: #8a8d92;
-	color: #fff;
-	text-decoration: none;
-}
-
-.button.primary {
-	box-shadow: 0 0.05em 0 0.05em #aa5d4e;
-	background-color: #b67468;
-	color: #fff;
-}
-
-.button.primary:hover {
-	box-shadow: 0 0 0 0.05em #d8dce4;
-	background-color: #d8dce4;
-	color: #3b3c3e;
-}
-
-.button.primary:active {
-	box-shadow: 0 0 0 0.05em #aa5d4e;
-	background-color: #aa5d4e;
-	color: #fff;
-}
-
-.button.transparent {
-	box-shadow: none;
-	background-color: transparent;
-	color: #8a8d92;
-}
-
-.button.transparent:hover {
-	box-shadow: none;
-	background-color: transparent;
-	color: #3b3c3e;
-	transform: scale(1.05);
-}
-
-.button.transparent:active {
-	box-shadow: none;
-	background-color: transparent;
-	color: #515254;
-	transform: none;
 }
 
 /* form */
