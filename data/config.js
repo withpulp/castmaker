@@ -26,7 +26,7 @@ module.exports = {
   userLinks: [
     {
       label: "GitHub",
-      url: "https://github.com/withpulp",
+      url: "https://github.com/withpulp/castmaker",
       icon: "fa fa-github"
     },
     {

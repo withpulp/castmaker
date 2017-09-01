@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Header from '../containers/header/';
@@ -17,12 +18,10 @@ export default class MainLayout extends React.Component {
   }
 
   getLocalTitle() {
-    function capitalize(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    }
     const pathPrefix = config.pathPrefix ? config.pathPrefix : '/';
     const currentPath = this.props.location.pathname.replace(pathPrefix, '').replace('/', '');
     let title = '';
+
     if (currentPath === ('')) {
       title = 'Home';
     } else if (currentPath === ('tags/')) {
@@ -35,11 +34,12 @@ export default class MainLayout extends React.Component {
       title = 'Updates';
     } else if (currentPath.includes('tags/')) {
       const tag = currentPath.replace('tags/', '').replace('/', '').replace('-', ' ');
-      title = `Tagged in ${capitalize(tag)}`;
+      title = `Tagged in ${_.capitalize(tag)}`;
     } else if (currentPath.includes('categories/')) {
       const category = currentPath.replace('categories/', '').replace('/', '').replace('-', ' ');
-      title = `${capitalize(category)}`;
+      title = `${_.capitalize(category)}`;
     }
+
     return title;
   }
 
