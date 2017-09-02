@@ -3,10 +3,15 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import Hero from '../containers/hero/';
-import Article from '../containers/article';
-import Affixed from '../containers/affixed';
+import Content from '../containers/content';
 import Heel from '../containers/heel';
 import SEO from '../components/seo/';
+import Markdown from '../components/markdown/';
+import Tags from '../components/tags/';
+import ReadNext from '../components/read_next';
+import Disqus from '../components/disqus/';
+import SocialShare from '../components/social_share/';
+import ReadingTime from '../components/reading_time/';
 import Counter from '../components/counter/';
 import config from '../../data/config';
 import templates from '../../data/templates';
@@ -45,8 +50,28 @@ export default class PostTemplate extends React.Component {
                 title={post.title}
                 caption={post.date}
                 button={button} />
-          <Article data={postNode} location={location} slug={pathContext} />
-          <Affixed data={postNode} location={location} type="bottom" />
+          <Content type={template.content.type}>
+            <Markdown figure
+                      type={template.content.type}
+                      data={postNode} />
+            <Tags figure
+                  type={template.content.type}
+                  tags={postNode.frontmatter.tags} />
+            <ReadNext figure
+                      type={template.content.type}
+                      previous={postNode.frontmatter.previous}
+                      next={postNode.frontmatter.next} />
+            <Disqus figure
+                    type={template.content.type}
+                    post={postNode} />
+            <SocialShare figure
+                         type={template.content.type}
+                         postPath={pathContext}
+                         postNode={postNode} />
+            <ReadingTime figure
+                         type={template.content.type}
+                         time={postNode.timeToRead} />
+          </Content>
           <Heel type={template.heel.type}>
             <Counter type={template.heel.type}
                      title={config.countdownTitle}

@@ -70,11 +70,15 @@ class Counter extends React.Component {
       difference = formattedDate - currentDate;
     }
 
+    // @TODO: create a function to handle this
     var days = parseInt(difference / (24 * 3600 * 1000));
     var hours = parseInt(difference / (3600 * 1000) - (days * 24));
     var minutes = parseInt(difference / (60 * 1000) - (days * 24 * 60) - (hours * 60));
     var seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
+    // @TODO: create component for the count element
+    // set pulse state for count component
+    // pulse state toggles class whenver the number changes
     return (
       <figcaption className="counter caption">
         <h2 className="days count">

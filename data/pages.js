@@ -43,6 +43,10 @@ const pages = [
 	      caption: true
 			}
     },
+		content: {
+			type: 'markdown',
+			figure: true
+		},
     cta: {
       type: 'centered'
     },

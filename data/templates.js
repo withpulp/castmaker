@@ -13,12 +13,8 @@ const templates = [
         }
 			}
     },
-    article: {
-      type: 'markdown',
-      tags: true,
-      navigation: true,
-      comments: true,
-      sharing: true
+    content: {
+      type: 'post'
     },
     heel: {
       type: 'fluid'

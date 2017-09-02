@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../containers/hero/';
-import Markdown from '../containers/markdown';
+import Content from '../containers/content';
 import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
 import Mailchimp from '../components/mailchimp';
@@ -33,7 +33,9 @@ class AboutIndex extends React.Component {
         <Hero figure={page.hero.figure}
               title={page.hero.headline.title}
               caption={page.hero.headline.caption} />
-        <Markdown data={about} />
+        <Content type={page.content.type}
+                 figure={page.content.figure}
+                 data={about.node} />
         <CTA type={page.cta.type}>
           <Mailchimp title={config.subscribeTitle}
                      caption={config.subscribeCaption}
