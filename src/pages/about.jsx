@@ -7,6 +7,7 @@ import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
+import Counter from '../components/counter/';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
@@ -15,13 +16,6 @@ class AboutIndex extends React.Component {
     const { location } = this.props;
     const content = this.props.data.allMarkdownRemark.edges;
     const page = pages.filter((page) => { return page.path === location.pathname; })[0];
-
-    const heel = {
-      type: 'fluid',
-      title: 'You\'ve Been Waiting For',
-      date: config.countupDate,
-      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
-    };
 
     // @TODO: get only about page data
     // from content/pages/about.md
@@ -47,7 +41,13 @@ class AboutIndex extends React.Component {
                      disclaimer={config.subscribeDisclaimer} />
           <SocialLinks links={config.userLinks} />
         </CTA>
-        <Heel data={heel} lazy />
+        <Heel type={page.heel.type}>
+          <Counter lazy
+                   type={page.heel.type}
+                   title={config.countupTitle}
+                   date={config.countupDate}
+                   message={config.counterMessage} />
+        </Heel>
       </div>
     );
   }

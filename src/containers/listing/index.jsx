@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Headline from '../../components/headline';
 import List from '../../components/list';
 import Button from '../../components/button';
@@ -42,10 +41,10 @@ class Listing extends React.Component {
 
     if (headline) {
       return <Headline figure={headline.figure}
-                  level={headline.level}
-                  title={headline.title}
-                  caption={headline.caption}
-                  button={headline.button} />;
+                       level={headline.level}
+                       title={headline.title}
+                       caption={headline.caption}
+                       button={headline.button} />;
     } else {
       return null;
     }

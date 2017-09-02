@@ -9,6 +9,7 @@ import SEO from '../components/seo/';
 import Headline from '../components/headline';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
+import Counter from '../components/counter/';
 import logo from '!file-loader!../../static/logos/logo-1024.png';
 import config from '../../data/config';
 import pages from '../../data/pages';
@@ -19,14 +20,9 @@ class Index extends React.Component {
     const posts = data.allMarkdownRemark.edges;
     const page = pages.filter((page) => { return page.path === location.pathname; })[0];
 
-    const heel = {
-      type: 'fluid',
-      title: 'Ready To Launch In',
-      date: config.countdownDate,
-      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
-    };
-
-    // @TODO: filter out post types in graphQL
+    // @TODO: filter out post types in graphQL (if possible)
+    // if not possible - find a better way to filter this data
+    // query currently pulls all data (includes about.md)
     // http://graphql.org/learn/queries/
     let updates = [];
     posts.forEach((post) => {
@@ -58,7 +54,12 @@ class Index extends React.Component {
                  button={page.listing.button}
                  headline={page.listing.headline}
                  list={updates} />
-        <Heel data={heel} />
+        <Heel type={page.heel.type}>
+          <Counter type={page.heel.type}
+                   title={config.countdownTitle}
+                   date={config.countdownDate}
+                   message={config.counterMessage} />
+        </Heel>
       </div>
     );
   }

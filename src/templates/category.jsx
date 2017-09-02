@@ -7,6 +7,7 @@ import CTA from '../containers/cta/';
 import Heel from '../containers/heel';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
+import Counter from '../components/counter/';
 import config from '../../data/config';
 import templates from '../../data/templates';
 
@@ -34,13 +35,6 @@ export default class CategoryTemplate extends React.Component {
       button = false;
     }
 
-    const heel = {
-      type: 'fluid',
-      title: 'Ready To Launch In',
-      date: config.countdownDate,
-      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
-    };
-
     return (
       <div className={`${template.id} template`}>
         <Helmet title={`${_.capitalize(template.type)} in category "${category}" | ${config.siteTitle}`} />
@@ -60,7 +54,12 @@ export default class CategoryTemplate extends React.Component {
                        disclaimer={config.subscribeDisclaimer} />
             <SocialLinks links={config.userLinks} />
           </CTA>
-          <Heel data={heel} />
+          <Heel type={template.heel.type}>
+            <Counter type={template.heel.type}
+                     title={config.countdownTitle}
+                     date={config.countdownDate}
+                     message={config.counterMessage} />
+          </Heel>
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Headline from '../../components/headline';
 import './index.css';
 
 class Counter extends React.Component {
@@ -6,8 +7,17 @@ class Counter extends React.Component {
     super(props);
 
     this.updateTime = this.updateTime.bind(this);
+
+    let lazy;
+    if (props.lazy) {
+      lazy = true;
+    } else {
+      lazy = false;
+    }
+
     this.state = {
-      time: new Date(props.data.date) / 1000
+      lazy: lazy,
+      time: new Date(props.date) / 1000
     }
   }
 
@@ -20,7 +30,7 @@ class Counter extends React.Component {
   }
 
   updateTime() {
-    const { lazy } = this.props;
+    let lazy = this.state.lazy;
 
     let time;
     if (lazy) {
@@ -32,22 +42,32 @@ class Counter extends React.Component {
     this.setState({time: time});
 
     if (this.state.time === 0) {
-      clearInterval(this.counting);
-      // @TODO: replace/hide counter when time reaches zero
-      // or change counter to lazy mode
+      this.setState({lazy: true});
     }
   }
 
-  render() {
-    const { data, type, lazy } = this.props;
-    const date = new Date(data.date);
+  renderHeadline() {
+    const { title, caption } = this.props;
+
+    if (title) {
+      return <Headline level={1}
+                       title={title}
+                       caption={caption} />;
+    } else {
+      return null;
+    }
+  }
+
+  renderCounter() {
+    const { title, date, message } = this.props;
+    const formattedDate = new Date(date);
     const currentDate = new Date();
 
     let difference;
-    if (lazy) {
-      difference = currentDate - date;
+    if (this.state.lazy) {
+      difference = currentDate - formattedDate;
     } else {
-      difference = date - currentDate;
+      difference = formattedDate - currentDate;
     }
 
     var days = parseInt(difference / (24 * 3600 * 1000));
@@ -56,39 +76,63 @@ class Counter extends React.Component {
     var seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
     return (
-      <figure className={`${type} counter figure`}>
-        { data.title ?
-          <h1 className="title">{data.title}</h1>
-        : null }
-        <figcaption className="counter caption">
-          <h2 className="days count">
-            {days}
-            <small className="label">
-              days
-            </small>
-          </h2>
-          <h2 className="hours count">
-            {hours}
-            <small className="label">
-              hours
-            </small>
-          </h2>
-          <h2 className="minutes count">
-            {minutes}
-            <small className="label">
-              minutes
-            </small>
-          </h2>
-          <h2 className="seconds count">
-            {seconds}
-            <small className="label">
-              seconds
-            </small>
-          </h2>
-        </figcaption>
-        { data.message ?
-          <h6 className="message">{data.message}</h6>
-        : null }
+      <figcaption className="counter caption">
+        <h2 className="days count">
+          {days}
+          <small className="label">
+            days
+          </small>
+        </h2>
+        <h2 className="hours count">
+          {hours}
+          <small className="label">
+            hours
+          </small>
+        </h2>
+        <h2 className="minutes count">
+          {minutes}
+          <small className="label">
+            minutes
+          </small>
+        </h2>
+        <h2 className="seconds count">
+          {seconds}
+          <small className="label">
+            seconds
+          </small>
+        </h2>
+      </figcaption>
+    )
+  }
+
+  renderMessage() {
+    const { message } = this.props;
+
+    if (message) {
+      // @TODO: create message component
+      return <h6 className="message">{message}</h6>
+    } else {
+      return null;
+    }
+  }
+
+  render() {
+    const { type } = this.props;
+
+    let setClass;
+    if (typeof type === 'string' && type !== 'fluid') {
+      setClass = `${type} counter figure`;
+    } else if (type === 'fluid') {
+      setClass = 'counter container figure';
+    } else {
+      setClass = 'counter figure';
+    }
+
+    return (
+      <figure className={setClass}>
+        { this.renderHeadline() }
+        { this.renderCounter() }
+        { this.renderMessage() }
       </figure>
     );
   }

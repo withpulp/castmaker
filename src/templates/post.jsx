@@ -2,11 +2,12 @@ import _ from 'lodash';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
-import SEO from '../components/seo/';
 import Hero from '../containers/hero/';
 import Article from '../containers/article';
 import Affixed from '../containers/affixed';
 import Heel from '../containers/heel';
+import SEO from '../components/seo/';
+import Counter from '../components/counter/';
 import config from '../../data/config';
 import templates from '../../data/templates';
 
@@ -33,13 +34,6 @@ export default class PostTemplate extends React.Component {
       button = false;
     }
 
-    const heel = {
-      type: 'fluid',
-      title: 'Ready To Launch In',
-      date: config.countdownDate,
-      message: 'Subscribe to our newsletter to receive monthly progress reports about the development of our product.'
-    };
-
     return (
       <div className={`${template.id} template`}>
         <Helmet title={`${post.title} | ${config.siteTitle}`} />
@@ -53,7 +47,12 @@ export default class PostTemplate extends React.Component {
                 button={button} />
           <Article data={postNode} location={location} slug={pathContext} />
           <Affixed data={postNode} location={location} type="bottom" />
-          <Heel data={heel} />
+          <Heel type={template.heel.type}>
+            <Counter type={template.heel.type}
+                     title={config.countdownTitle}
+                     date={config.countdownDate}
+                     message={config.counterMessage} />
+          </Heel>
         </div>
       </div>
     );
