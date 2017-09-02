@@ -8,9 +8,9 @@ import Heel from '../containers/heel';
 import SEO from '../components/seo/';
 import Markdown from '../components/markdown/';
 import Tags from '../components/tags/';
-import ReadNext from '../components/read_next';
 import Disqus from '../components/disqus/';
 import SocialShare from '../components/social_share/';
+import ReadNext from '../components/read_next';
 import ReadingTime from '../components/reading_time/';
 import Counter from '../components/counter/';
 import config from '../../data/config';
@@ -57,10 +57,6 @@ export default class PostTemplate extends React.Component {
             <Tags figure
                   type={template.content.type}
                   tags={postNode.frontmatter.tags} />
-            <ReadNext figure
-                      type={template.content.type}
-                      previous={postNode.frontmatter.previous}
-                      next={postNode.frontmatter.next} />
             <Disqus figure
                     type={template.content.type}
                     post={postNode} />
@@ -68,6 +64,10 @@ export default class PostTemplate extends React.Component {
                          type={template.content.type}
                          postPath={pathContext}
                          postNode={postNode} />
+            <ReadNext figure
+                      type={template.content.type}
+                      previous={postNode.frontmatter.previous}
+                      next={postNode.frontmatter.next} />
             <ReadingTime figure
                          type={template.content.type}
                          time={postNode.timeToRead} />

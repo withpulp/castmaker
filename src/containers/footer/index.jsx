@@ -7,34 +7,15 @@ import quotes from '../../../data/quotes';
 import './index.css';
 
 class Footer extends Component {
-  renderCTA() {
-    const path = this.props.location.pathname;
-
-    let cta;
-
-    // @TODO: refactor to
-    // if path includes '/posts/slug' show null
-    // else show quotes
-    if (path === '/' || path === '/about' || path === '/updates' || path === '/404')  {
-      cta = (
-        <Quotes data={quotes} />
-      )
-    } else {
-      cta = null;
-    }
-
-    return cta;
-  }
-
   render() {
     const url = config.siteRss;
     // @TODO: create caption component for copyright message
     // add url to company/author website inside copyright message
-
+    
     return (
       <footer className="footer">
         <section className="affixed bottom section">
-          { this.renderCTA() }
+          <Quotes data={quotes} />
           <p className="copyright caption">{config.copyright}</p>
         </section>
       </footer>
