@@ -1,4 +1,12 @@
+.tags.figure {
+  text-align: right;
+}
+
 .tags.figure .tag.button {
-  margin-right: 1em;
+  margin-left: 1em;
   font-size: 65%;
+}
+
+.tags.figure .tag.button:first-child {
+  margin-left: 0;
 }

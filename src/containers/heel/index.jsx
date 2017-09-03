@@ -1,6 +1,7 @@
 import React from 'react';
-import Headline from '../../components/headline';
-import Button from '../../components/button';
+import Headline from '../../components/headline/';
+import Message from '../../components/message/'
+import Button from '../../components/button/';
 import './index.css';
 
 class Heel extends React.Component {
@@ -32,8 +33,10 @@ class Heel extends React.Component {
     const { message } = this.props;
 
     if (message) {
-      // @TODO: create message component
-      return <p className="message">{message}</p>
+      return <Message figure={message.figure}
+                      type={message.type}
+                      level={message.level}
+                      message={message.message} />
     } else {
       return null;
     }

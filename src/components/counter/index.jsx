@@ -1,5 +1,6 @@
 import React from 'react';
 import Headline from '../../components/headline';
+import Message from '../../components/message';
 import './index.css';
 
 class Counter extends React.Component {
@@ -113,8 +114,8 @@ class Counter extends React.Component {
     const { message } = this.props;
 
     if (message) {
-      // @TODO: create message component
-      return <h6 className="message">{message}</h6>
+      return <Message level={6} 
+                      message={message} />
     } else {
       return null;
     }

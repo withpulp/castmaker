@@ -1,5 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery';
+import Headline from '../../components/headline';
+import Message from '../../components/message';
 import './index.css';
 
 // @TODO: create or use a react npm package for mailchimp
@@ -51,7 +53,7 @@ class Mailchimp extends React.Component {
         </form>
 
         { disclaimer ?
-          <p className="disclaimer">{disclaimer}</p>
+          <Message type="disclaimer" message={disclaimer} />
         : null }
       </figure>
     )
