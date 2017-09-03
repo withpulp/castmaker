@@ -1,0 +1,29 @@
+.affixed.section {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+}
+
+.affixed.top.section {
+  top: 0;
+}
+
+.affixed.bottom.section {
+  bottom: 0;
+}
+
+.affixed.right.section {
+  left: auto;
+  right: 50%;
+}
+
+.affixed.centered.section {
+  position: absolute;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
