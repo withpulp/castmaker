@@ -23,7 +23,7 @@ class ReadNext extends React.Component {
     }
 
     // @TODO: use headline component
-
+    // need to configure it to place sub above title
     return (
       <figure className={setClass}>
         <Link className="link previous"

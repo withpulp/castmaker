@@ -27,10 +27,10 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
 * Create more templates for pages
 * Move CSS to Glamor (or other alternative)
-  * create design module to update color scheme in one place
+  * create design config to update site colors in one place
 * Configure typography to use modular scale on text
 * Move global element styles to typography or related components
-* Edit markup of markdown HTML renders (see marked.renderer())
+* Edit markup of markdown HTML renders - see marked.renderer()
 
 ## Getting Started
 

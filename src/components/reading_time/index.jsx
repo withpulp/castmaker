@@ -6,6 +6,7 @@ class ReadingTime extends React.Component {
   render() {
     const { time } = this.props;
 
+    // @TODO: refactor this into a label component
     return (
       <figure className="reading time figure">
         <p className="caption">
