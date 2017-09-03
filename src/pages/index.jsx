@@ -6,6 +6,7 @@ import Hero from '../containers/hero/';
 import CTA from '../containers/cta/';
 import Listing from '../containers/listing/';
 import Heel from '../containers/heel';
+import Image from '../components/image';
 import Headline from '../components/headline';
 import Mailchimp from '../components/mailchimp';
 import SocialLinks from '../components/social_links';
@@ -31,13 +32,13 @@ class Index extends React.Component {
       }
     });
 
-    // @TODO: create image component
     return (
       <div className={`${page.id} page`}>
         <Helmet title={`${config.siteTitle} | ${config.siteDescription}`} />
         <SEO postEdges={posts} />
         <Hero type={page.hero.type} figure={page.hero.figure}>
-          <img className="logo image" src={logo} />
+          <Image type={page.hero.image.type}
+                 image={logo} />
           <Headline type={page.hero.headline.type}
                     level={page.hero.headline.level}
                     title={page.hero.headline.title}

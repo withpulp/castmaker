@@ -5,6 +5,9 @@ const pages = [
     hero: {
       type: 'jumbo',
 			figure: true,
+			image: {
+				type: 'logo'
+			},
 			headline: {
 				type: 'centered',
 				level: 1,
