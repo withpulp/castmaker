@@ -21,7 +21,7 @@
   }
 }
 
-.mailchimp.figure .title .message {
+.mailchimp.figure .title .sub {
   margin-top: 0.5em;
   padding: 0.5em;
   border-top: 0.1em solid #b67468;
@@ -29,14 +29,14 @@
 }
 
 @media only screen and (min-width: 48em) {
-  .mailchimp.figure .title .message {
+  .mailchimp.figure .title .sub {
     padding-left: 5.5em;
     padding-right: 5.5em;
   }
 }
 
 @media only screen and (min-width: 62em) {
-  .mailchimp.figure .title .message {
+  .mailchimp.figure .title .sub {
     padding-left: 10.5em;
     padding-right: 10.5em;
   }

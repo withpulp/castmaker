@@ -37,7 +37,8 @@ class AboutIndex extends React.Component {
                  figure={page.content.figure}
                  data={about.node} />
         <CTA type={page.cta.type}>
-          <Mailchimp title={config.subscribeTitle}
+          <Mailchimp figure
+                     title={config.subscribeTitle}
                      caption={config.subscribeCaption}
                      action={config.mailchimpAction}
                      disclaimer={config.subscribeDisclaimer} />

@@ -48,7 +48,8 @@ export default class CategoryTemplate extends React.Component {
                    button={button}
                    list={posts} />
           <CTA type={template.cta.type}>
-            <Mailchimp title={config.subscribeTitle}
+            <Mailchimp figure
+                       title={config.subscribeTitle}
                        caption={config.subscribeCaption}
                        action={config.mailchimpAction}
                        disclaimer={config.subscribeDisclaimer} />

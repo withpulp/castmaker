@@ -45,7 +45,8 @@ class Index extends React.Component {
                     caption={page.hero.headline.caption} />
         </Hero>
         <CTA type={page.cta.type}>
-          <Mailchimp action={config.mailchimpAction}
+          <Mailchimp figure
+                     action={config.mailchimpAction}
                      disclaimer={config.subscribeDisclaimer} />
           <SocialLinks links={config.userLinks} />
         </CTA>
