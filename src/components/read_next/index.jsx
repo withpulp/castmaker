@@ -1,22 +1,44 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Headline from '../../components/headline/';
 import './index.css';
 
 class ReadNext extends React.Component {
   render() {
-    const { previous, next } = this.props;
+    const { figure, type, prefix, previous, next } = this.props;
 
-    // @TODO: add posts into link href from current url or prop
+    let setClass;
+    if (typeof figure === 'string') {
+      if (typeof type === 'string') {
+        setClass = `${type} read next ${figure} figure`;
+      } else {
+        setClass = `read next ${figure} figure`;
+      }
+    } else {
+      if (typeof type === 'string') {
+        setClass = `${type} read next figure`;
+      } else {
+        setClass = 'read next figure';
+      }
+    }
+
+    // @TODO: use headline component
 
     return (
-      <figure className="read next figure">
+      <figure className={setClass}>
         <Link className="link previous"
               to={`/updates/${previous}`}>
-          <small className="label">Read Previous</small> {previous.split('-').join(' ')}
+          <h4 className="title">
+            <small className="sub">Read Previous</small>
+            {previous.split('-').join(' ')}
+          </h4>
         </Link>
         <Link className="link next"
               to={`/updates/${next}`}>
-          <small className="label">Read Next</small> {next.split('-').join(' ')}
+          <h4 className="title">
+            <small className="sub">Read Next</small>
+            {next.split('-').join(' ')}
+          </h4>
         </Link>
       </figure>
     );

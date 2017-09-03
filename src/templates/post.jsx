@@ -4,13 +4,14 @@ import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import SEO from '../containers/seo/';
 import Hero from '../containers/hero/';
-import Content from '../containers/content';
-import Heel from '../containers/heel';
+import Content from '../containers/content/';
+import CTA from '../containers/cta/';
+import Heel from '../containers/heel/';
 import Markdown from '../components/markdown/';
 import Tags from '../components/tags/';
 import Disqus from '../components/disqus/';
 import SocialShare from '../components/social_share/';
-import ReadNext from '../components/read_next';
+import ReadNext from '../components/read_next/';
 import ReadingTime from '../components/reading_time/';
 import Counter from '../components/counter/';
 import config from '../../data/config';
@@ -60,18 +61,21 @@ export default class PostTemplate extends React.Component {
             <Disqus figure
                     type={template.content.type}
                     post={postNode} />
-            <SocialShare figure
-                         type={template.content.type}
-                         postPath={pathContext}
-                         postNode={postNode} />
-            <ReadNext figure
-                      type={template.content.type}
-                      previous={postNode.frontmatter.previous}
-                      next={postNode.frontmatter.next} />
-            <ReadingTime figure
+            <ReadingTime figure={template.cta.figure}
                          type={template.content.type}
                          time={postNode.timeToRead} />
           </Content>
+          <CTA type={template.cta.type}>
+            <SocialShare figure={template.cta.figure}
+                         type={template.content.type}
+                         postPath={pathContext}
+                         postNode={postNode} />
+            <ReadNext figure={template.cta.type}
+                      type={template.content.type}
+                      prefix={template.prefix}
+                      previous={postNode.frontmatter.previous}
+                      next={postNode.frontmatter.next} />
+          </CTA>
           <Heel type={template.heel.type}>
             <Counter type={template.heel.type}
                      title={config.countdownTitle}

@@ -1,59 +1,91 @@
-.read.next.figure {
-  margin-top: -2em;
+.read.next.fluid.figure {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 0.5em solid #d8dce4;
+  background-color: #aa5d4e;
 }
 
 .read.next.figure .link {
-  display: block;
+  display: flex;
   position: relative;
-  max-width: 16em;
+  width: 100%;
+  min-height: 6em;
+  flex: none;
   margin: 0 auto;
-  color: #515254;
-  font-family: 'Ubuntu','Open Sans','Helvetica Neue','Helvetica','Arial','sans-serif';
-  font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  text-align: center;
-  line-height: 1;
   transition: all 250ms ease;
-}
-
-.read.next.figure .link:hover {
-  color: #3b3c3e;
-}
-
-.read.next.figure .link.previous {
-  transform: scale(0.5);
-  margin-bottom: 0.5em;
 }
 
 @media only screen and (min-width: 48em) {
   .read.next.figure .link {
-    transform: scale(1.25);
-  }
-
-  .read.next.figure .link:hover {
-    transform: scale(2);
-  }
-
-  .read.next.figure .link.previous {
-    filter: blur(0.15em);
-    transform: scale(0.25);
-  }
-
-  .read.next.figure .link.previous:hover {
-    filter: blur(0);
-    transform: scale(0.5);
+    flex: 1;
   }
 }
 
-.read.next.figure .link .label {
-  display: block;
-  color: #8a8d92;
+.read.next.figure .link.next {
+  text-align: right;
+}
+
+.read.next.fluid.figure .link:hover {
+  background-color: #b67468;
+}
+
+.read.next.fluid.figure .link:active {
+  background-color: #d8dce4;
+}
+
+.read.next.figure .link .title {
+  text-transform: uppercase;
+}
+
+.read.next.fluid.figure .link .title {
+  flex: 1;
+  align-self: flex-end;
+  max-width: 38em;
+  margin: 0 auto;
+  padding: 1em;
+  color: #f3f7ff;
+}
+
+.read.next.fluid.figure .link:hover .title {
+  color: #fff;
+}
+
+.read.next.fluid.figure .link:active .title {
+  color: #3b3c3e;
+}
+
+@media only screen and (min-width: 48em) {
+  .read.next.fluid.figure .link .title {
+    max-width: 19em;
+  }
+
+  .read.next.figure .link.previous .title {
+    margin-right: 0;
+  }
+
+  .read.next.figure .link.next .title {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .read.next.fluid.figure .link .title {
+    max-width: 24em;
+  }
+}
+
+.read.next.figure .link .title .sub {
+  color: #3b3c3e;
   font-size: 75%;
   font-weight: normal;
   text-transform: lowercase;
 }
 
-.read.next.figure .link:hover .label {
-  color: #aa5d4e;
+.read.next.figure .link:hover .title .sub {
+  color: #515254;
+}
+
+.read.next.fluid.figure .link:active .title .sub {
+
 }

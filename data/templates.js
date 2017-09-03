@@ -16,6 +16,10 @@ const templates = [
     content: {
       type: 'post'
     },
+		cta: {
+			type: 'fluid',
+			figure: 'container'
+		},
     heel: {
       type: 'fluid'
     }

@@ -5,7 +5,7 @@ import './index.css';
 
 class CTA extends React.Component {
   renderCTA() {
-    const { headline, button } = this.props;
+    const { level, headline, button } = this.props;
     let cta, setLevel;
 
     if (level) {

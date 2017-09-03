@@ -5,7 +5,7 @@ import './index.css';
 
 class SocialShare extends React.Component {
   render() {
-    const { postNode, postPath, mobile } = this.props;
+    const { figure, type, postNode, postPath, mobile } = this.props;
     const post = postNode.frontmatter;
     const url = config.siteUrl + config.pathPrefix + postPath;
     const {
@@ -22,7 +22,6 @@ class SocialShare extends React.Component {
       LinkedinShareCount,
       RedditShareCount,
     } = ShareCounts;
-
     const FacebookIcon = generateShareIcon('facebook');
     const TwitterIcon = generateShareIcon('twitter');
     const TelegramIcon = generateShareIcon('telegram');
@@ -32,8 +31,23 @@ class SocialShare extends React.Component {
     const iconSize = mobile ? 36 : 48;
     const filter = count => (count > 0 ? count : '');
 
+    let setClass;
+    if (typeof figure === 'string') {
+      if (typeof type === 'string') {
+        setClass = `${type} social share ${figure} figure`;
+      } else {
+        setClass = `social share ${figure} figure`;
+      }
+    } else {
+      if (typeof type === 'string') {
+        setClass = `${type} social share figure`;
+      } else {
+        setClass = 'social share figure';
+      }
+    }
+
     return (
-      <figure className="social share figure">
+      <figure className={setClass}>
         <RedditShareButton
           url={url}
           title={post.title}
