@@ -7,6 +7,7 @@ import Hero from '../containers/hero/';
 import Content from '../containers/content/';
 import CTA from '../containers/cta/';
 import Heel from '../containers/heel/';
+import Affixed from '../containers/affixed/';
 import Markdown from '../components/markdown/';
 import Tags from '../components/tags/';
 import Disqus from '../components/disqus/';
@@ -61,9 +62,6 @@ export default class PostTemplate extends React.Component {
             <Disqus figure
                     type={template.content.type}
                     post={postNode} />
-            <ReadingTime figure={template.cta.figure}
-                         type={template.content.type}
-                         time={postNode.timeToRead} />
           </Content>
           <CTA type={template.cta.type}>
             <SocialShare figure={template.cta.figure}
@@ -82,6 +80,11 @@ export default class PostTemplate extends React.Component {
                      date={config.countdownDate}
                      message={config.counterMessage} />
           </Heel>
+          <Affixed type={template.affixed.type}
+                   figure={template.affixed.figure}>
+            <ReadingTime type={template.content.type}
+                         time={postNode.timeToRead} />
+          </Affixed>
         </div>
       </div>
     );

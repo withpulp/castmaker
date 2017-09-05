@@ -1,3 +1,4 @@
+/* affixed section */
 .affixed.section {
   display: flex;
   position: fixed;
@@ -6,6 +7,7 @@
   width: 100%;
   margin: 0;
   background-color: transparent;
+  z-index: 1;
 }
 
 .affixed.top.section {
@@ -19,6 +21,7 @@
 .affixed.right.section {
   left: auto;
   right: 50%;
+  transform: translateX(50%);
 }
 
 .affixed.centered.section {
@@ -26,4 +29,35 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.affixed.fluid.section {
+  position: relative;
+  left: 0;
+  transform: none;
+}
+
+/* affixed figure */
+
+.affixed.section .inline.figure {
+  display: inline-block;
+  width: auto;
+}
+
+.affixed.section .affixed.figure {
+  position: fixed;
+  left: 0;
+}
+
+.affixed.fluid.section .top.affixed.figure {
+  top: 0;
+}
+
+.affixed.fluid.section .bottom.affixed.figure {
+  bottom: 0;
+}
+
+.affixed.fluid.section .right.affixed.figure {
+  left: auto;
+  right: 0;
 }

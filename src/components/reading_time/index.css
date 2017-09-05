@@ -1,23 +1,15 @@
-.reading.time.figure {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: auto;
-  margin: 1em !important;
+.reading.time.caption {
+  margin: 1em;
   padding: 0.25em;
+  box-shadow: 0 0 0 0.05em #3b3c3e;
   background-color: rgba(59, 60, 62, 0.95);
+  color: #d8dce4;
   font-size: 75%;
   text-align: center;
-  z-index: 1;
-}
-
-.reading.time.figure .caption {
-  margin: 0;
-  color: #d8dce4;
   line-height: 1;
 }
 
-.reading.time.figure .caption .label {
+.reading.time.caption .label {
   display: block;
   color: #aa5d4e;
   font-size: 50%;

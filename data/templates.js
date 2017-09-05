@@ -22,7 +22,11 @@ const templates = [
 		},
     heel: {
       type: 'fluid'
-    }
+    },
+		affixed: {
+			type: 'fluid',
+			figure: 'inline bottom right'
+		}
 	},
   {
     id: 'category',

@@ -27,14 +27,14 @@ class ReadNext extends React.Component {
     return (
       <figure className={setClass}>
         <Link className="link previous"
-              to={`/updates/${previous}`}>
+              to={`${prefix}/${previous}`}>
           <h4 className="title">
             <small className="sub">Read Previous</small>
             {previous.split('-').join(' ')}
           </h4>
         </Link>
         <Link className="link next"
-              to={`/updates/${next}`}>
+              to={`${prefix}/${next}`}>
           <h4 className="title">
             <small className="sub">Read Next</small>
             {next.split('-').join(' ')}
