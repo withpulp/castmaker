@@ -3,6 +3,7 @@ import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import './index.css';
 
 // @TODO: GA event tracking for outbound links
+// use button component
 class SocialLinks extends React.Component {
   getLinkElements() {
     const { links, labeled } = this.props;

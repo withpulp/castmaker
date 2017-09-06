@@ -4,7 +4,23 @@ import Link from 'gatsby-link';
 import './index.css';
 
 class Button extends React.Component {
-  // @TODO: add icon
+  renderIcon() {
+    const { icon } = this.props;
+    let setClass;
+
+    if (icon && typeof icon === 'string') {
+      setClass = `${icon} icon`;
+    } else {
+      setClass = 'icon';
+    }
+
+    if (icon) {
+      return <i className={setClass}></i>;
+    } else {
+      return null;
+    }
+  }
+
   renderButton() {
     const { type, icon, label, to, action } = this.props;
     let button, setClass;
@@ -16,11 +32,11 @@ class Button extends React.Component {
     }
 
     if (_.includes(type, 'link')) {
-      button = <Link className={setClass} to={to}>{label}</Link>
+      button = <Link className={setClass} to={to}>{this.renderIcon()}{label}</Link>
     } else if (_.includes(type, 'submit')) {
-      button = <button type="submit" className={setClass} action={action}>{label}</button>
+      button = <button type="submit" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
     } else {
-      button = <button type="button" className={setClass} action={action}>{label}</button>
+      button = <button type="button" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
     }
 
     return button;

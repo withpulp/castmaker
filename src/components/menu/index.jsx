@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Button from '../../components/button/';
 import './index.css';
 
 class Menu extends React.Component {
@@ -8,11 +9,9 @@ class Menu extends React.Component {
 
     return (
       <figure className="menu figure">
-        <button className="transparent button"
-                type="button"
-                onClick={action}>
-          <i className="menu icon"></i>
-        </button>
+        <Button type="transparent"
+                icon="menu"
+                action={action} />
         <nav className="navigation">
           {pages.map(page => (
             <Link key={page.id}

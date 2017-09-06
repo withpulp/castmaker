@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 import Link from 'gatsby-link';
+import Image from '../../components/image/';
 import Menu from '../../components/menu/';
 import config from '../../../data/config';
 import pages from '../../../data/pages';
@@ -15,7 +16,8 @@ class Header extends Component {
         <Headroom disableInlineStyles>
           <Link className="link"
                 to="/">
-            <img className="logo image" src={config.siteLogo} />
+            <Image type="logo"
+                   image={config.siteLogo} />
           </Link>
           <Menu pages={pages} location={location} action={action} />
         </Headroom>
