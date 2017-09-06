@@ -26,6 +26,7 @@
   padding: 0.5em;
   border-top: 0.1em solid #b67468;
   color: #515254;
+  text-align: left;
 }
 
 @media only screen and (min-width: 48em) {

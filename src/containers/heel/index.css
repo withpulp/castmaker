@@ -9,3 +9,22 @@
   background-color: #515254;
   color: #d8dce4;
 }
+
+.fluid.heel.section .figure {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.fluid.heel.section .figure .title {
+  max-width: 14em;
+  margin: 1em auto 0.25em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.fluid.heel.section .figure .title .sub {
+  padding: 0.5em 0;
+  color: #d8dce4;
+  text-align: left;
+  text-transform: none;
+}

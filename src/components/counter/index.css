@@ -1,12 +1,5 @@
-.counter.figure {
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
 .counter.figure .title {
   margin-bottom: 0.5em;
-  color: #fff;
-  text-transform: uppercase;
 }
 
 .counter.figure .caption .count {

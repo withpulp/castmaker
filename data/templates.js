@@ -21,7 +21,8 @@ module.exports = [
 			figure: 'container'
 		},
     heel: {
-      type: 'fluid'
+      type: 'fluid',
+			figure: 'container'
     },
 		affixed: {
 			type: 'fluid',

@@ -14,7 +14,7 @@ import Disqus from '../components/disqus/';
 import SocialShare from '../components/social_share/';
 import ReadNext from '../components/read_next/';
 import ReadingTime from '../components/reading_time/';
-import Counter from '../components/counter/';
+import Mailchimp from '../components/mailchimp/';
 import config from '../../data/config';
 import templates from '../../data/templates';
 
@@ -75,10 +75,11 @@ export default class PostTemplate extends React.Component {
                       next={postNode.frontmatter.next} />
           </CTA>
           <Heel type={template.heel.type}>
-            <Counter type={template.heel.type}
-                     title={config.countdownTitle}
-                     date={config.countdownDate}
-                     message={config.counterMessage} />
+            <Mailchimp figure={template.heel.figure}
+                       title={config.subscribeTitle}
+                       caption={config.subscribeCaption}
+                       action={config.mailchimpAction}
+                       disclaimer={config.subscribeDisclaimer} />
           </Heel>
           <Affixed type={template.affixed.type}
                    figure={template.affixed.figure}>
