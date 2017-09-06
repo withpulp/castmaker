@@ -22,7 +22,7 @@ class Button extends React.Component {
   }
 
   renderButton() {
-    const { type, icon, label, to, action } = this.props;
+    const { type, label, to, action } = this.props;
     let button, setClass;
 
     if (type && typeof type === 'string') {

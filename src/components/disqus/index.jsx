@@ -17,21 +17,39 @@ class Disqus extends Component {
     const [, ...toasts] = this.state.toasts;
     this.setState({ toasts });
   }
+
   notifyAboutComment() {
     const toasts = this.state.toasts.slice();
     toasts.push({ text: 'New comment available!' });
     this.setState({ toasts });
   }
+
   render() {
-    const { post } = this.props;
+    const { type, figure, post } = this.props;
     const title = post.frontmatter.title;
     const categoryId = post.frontmatter.category_id;
     const url = config.siteUrl + config.pathPrefix + post.fields.slug;
+
+    let setClass;
+    if (typeof figure === 'string') {
+      if (typeof type === 'string') {
+        setClass = `${type} comments ${figure} figure`;
+      } else {
+        setClass = `comments ${figure} figure`;
+      }
+    } else {
+      if (typeof type === 'string') {
+        setClass = `${type} comments figure`;
+      } else {
+        setClass = 'comments figure';
+      }
+    }
+
     if (!config.disqusShortname) {
       return null;
     }
     return (
-      <figure className="comments figure">
+      <figure className={setClass}>
         <ReactDisqusComments className="disqus"
                              shortname={config.disqusShortname}
                              identifier={title}

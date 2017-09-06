@@ -5,9 +5,25 @@ import './index.css';
 
 class Tags extends React.Component {
   render() {
-    const { tags } = this.props;
+    const { type, figure, tags } = this.props;
+
+    let setClass;
+    if (typeof figure === 'string') {
+      if (typeof type === 'string') {
+        setClass = `${type} tags ${figure} figure`;
+      } else {
+        setClass = `tags ${figure} figure`;
+      }
+    } else {
+      if (typeof type === 'string') {
+        setClass = `${type} tags figure`;
+      } else {
+        setClass = 'tags figure';
+      }
+    }
+
     return (
-      <figure className="tags figure">
+      <figure className={setClass}>
         {tags && tags.map(tag => (
           <Link className="tag button"
                 key={tag}
