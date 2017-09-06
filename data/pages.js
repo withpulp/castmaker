@@ -1,4 +1,4 @@
-const pages = [
+module.exports = [
 	{
     id: 'home',
 		path: '/',
@@ -81,5 +81,3 @@ const pages = [
     }
 	}
 ];
-
-export default pages;

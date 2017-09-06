@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const templates = require('./data/templates');
 const webpackLodashPlugin = require('lodash-webpack-plugin');
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
@@ -28,6 +29,9 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
+  const postTemplate = templates.filter((template) => { return template.id === 'post'; })[0];
+  const categoryTemplate = templates.filter((template) => { return template.id === 'category'; })[0];
+  const tagTemplate = templates.filter((template) => { return template.id === 'tag'; })[0];
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve('src/templates/post.jsx');
@@ -75,7 +79,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
           if (edge.node.frontmatter.type === 'post') {
             createPage({
-              path: `/updates${edge.node.fields.slug}`,
+              path: `${postTemplate.prefix}${edge.node.fields.slug}`,
               component: postPage,
               context: {
                 slug: edge.node.fields.slug,
@@ -87,7 +91,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const tagList = Array.from(tagSet);
         tagList.forEach((tag) => {
           createPage({
-            path: `/updates/tags/${_.kebabCase(tag)}/`,
+            path: `${postTemplate.prefix}${tagTemplate.prefix}${_.kebabCase(tag)}/`,
             component: tagPage,
             context: {
               tag,
@@ -98,7 +102,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const categoryList = Array.from(categorySet);
         categoryList.forEach((category) => {
           createPage({
-            path: `/updates/categories/${_.kebabCase(category)}/`,
+            path: `${postTemplate.prefix}${categoryTemplate.prefix}${_.kebabCase(category)}/`,
             component: categoryPage,
             context: {
               category,

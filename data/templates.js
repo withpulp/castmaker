@@ -1,4 +1,4 @@
-const templates = [
+module.exports = [
 	{
     id: 'post',
 		prefix: '/updates',
@@ -81,5 +81,3 @@ const templates = [
     }
 	}
 ];
-
-export default templates;
