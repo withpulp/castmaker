@@ -62,6 +62,7 @@ module.exports = {
         color: config.themeColor,
       },
     },
+    'gatsby-plugin-glamor',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
