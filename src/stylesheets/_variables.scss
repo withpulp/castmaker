@@ -1,0 +1,71 @@
+// @TODO extract colors from config
+
+// Colors
+$color-primary: #aa5d4e;
+$color-primary-hover: #b67468;
+$color-secondary: #3b3c3e;
+$color-secondary-hover: #515254;
+$color-neutral: #8a8d92;
+$color-neutral-hover: #d8dce4;
+$color-mono: #f3f7ff;
+$color-background: #fff;
+
+// Containers
+$container-base: 38em;
+$container-laptop: 48em;
+
+// Speed
+$fastest: 50ms;
+$faster: 250ms;
+$fast: 500ms;
+$slow: 1000ms;
+$slower: 2000ms;
+$slowest: 3000ms;
+
+// Spaces
+$quantum: 0.05em;
+$atomic: 0.10em;
+$micro: 0.15em;
+$mini: 0.25em;
+$tiny: 0.5em;
+$small: 0.75em;
+$base: 1em;
+$large: 2em;
+$huge: 3em;
+$jumbo: 4em;
+$massive: 5em;
+$giant: 6em;
+$colossal: 7em;
+$titanic: 8em;
+$galactic: 9em;
+$god: 10em;
+
+$fluid-sixteenth: 6vh;
+$fluid-eighth: 12.5vh;
+$fluid-quarter: 25vh;
+$fluid-third: 33.3333vh;
+$fluid-half: 50vh;
+$fluid-two-thirds: 66.6666vh;
+$fluid-three-quarters: 75vh;
+$fluid-full: 100vh;
+
+$sixteenth: 6%;
+$eighth: 12.5%;
+$quarter: 25%;
+$third: 33.3333%;
+$half: 50%;
+$two-thirds: 66.6666%;
+$three-quarters: 75%;
+$full: 100%;
+
+// Media Queries
+$media-phone: 30em;
+$media-tablet: 48em;
+$media-laptop: 62em;
+$media-desktop: 75em;
+$media-desktop-large: 100em;
+$media-desktop-huge: 125em;
+$media-desktop-jumbo: 175em;
+$media-desktop-massive: 200em;
+$media-desktop-giant: 250em;
+$media-desktop-colossal: 300em;

@@ -55,6 +55,7 @@ const options = {
         lineHeight: 1
       },
       a: {
+        position: 'relative',
         color: '#aa5d4e',
         fontSize: 'inerit',
         fontWeight: 'inherit',

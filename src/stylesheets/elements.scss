@@ -1,0 +1,114 @@
+@import './_variables';
+
+// section
+.section {
+	display: block;
+	position: relative;
+	width: $full;
+	max-width: $container-base;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: $jumbo;
+	padding: $base;
+
+  @media only screen and (min-width: $media-laptop) {
+    max-width: $container-laptop;
+  }
+
+  // section fluid
+  &.fluid {
+    display: flex;
+  	flex-direction: column;
+  	max-width: $full;
+  	padding: 0;
+  }
+}
+
+// figure
+.figure {
+	display: block;
+	position: relative;
+	width: $full;
+	max-width: $full;
+	height: auto;
+	margin: 0 auto;
+
+  // figure container
+  &.container {
+    max-width: $container-base;
+  	padding: $base;
+
+    @media only screen and (min-width: $media-laptop) {
+      max-width: $container-laptop;
+    }
+  }
+
+  // figure flex
+  &.flex {
+
+    @media only screen and (min-width: $media-laptop) {
+      display: flex;
+      align-items: flex-start;
+      padding-top: $huge;
+      padding-bottom: $huge;
+    }
+  }
+}
+
+// link
+.link {
+	position: relative;
+}
+
+// form
+.form {
+	position: relative;
+
+  .field {
+    display: flex;
+  	margin: 0 auto;
+
+    .input {
+    	padding: $tiny $small;
+    	outline: none;
+    	border: 0;
+    	box-shadow: 0 0 0 $quantum $color-neutral-hover;
+    	transition: all $faster;
+
+      &:focus {
+      	box-shadow: 0 0 0 $quantum $color-primary;
+      }
+    }
+
+    // form group
+    &.group {
+    	font-size: $three-quarters;
+
+      @media only screen and (min-width: $media-phone) {
+      	font-size: $full;
+      }
+
+      .input {
+      	flex: 1;
+      }
+
+      .button {
+      	margin: 0;
+      	top: -$quantum;
+
+        &:hover {
+        	top: 0;
+        }
+
+        &:active {
+        	top: 0;
+        }
+      }
+    }
+  }
+}
+
+// global
+* {
+  box-sizing: border-box;
+}

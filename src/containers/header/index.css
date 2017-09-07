@@ -54,7 +54,3 @@
 .navigating .header .headroom-wrapper .headroom.headroom--unfixed  {
   display: block;
 }
-
-.navigating .header .headroom-wrapper .headroom.headroom--unpinned .details.button {
-  display: none;
-}

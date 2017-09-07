@@ -1,0 +1,16 @@
+@import '../stylesheets/_variables';
+
+.layout {
+  display: flex;
+  min-height: $fluid-full;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .content {
+    flex: 1;
+    z-index: 1;
+    margin-bottom: $fluid-half;
+    background-color: $color-background;
+    box-shadow: 0 0 $mini 0 $color-secondary;
+  }
+}
