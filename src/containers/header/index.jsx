@@ -5,9 +5,7 @@ import Image from '../../components/image/';
 import Menu from '../../components/menu/';
 import config from '../../../data/config';
 import pages from '../../../data/pages';
-// @TODO: find a better way to handle styles for different headroom states
-// headroom docs: https://kyleamathews.github.io/react-headroom/
-import './index.css';
+import './index.scss';
 
 class Header extends Component {
   render() {

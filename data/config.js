@@ -57,7 +57,5 @@ module.exports = {
   errorCaption: 'You are lost', // Caption for 404 page
   // Design Config
   themeColor: "#aa5d4e", // Used for setting manifest and progress theme colors.
-  headerColor: "#3b3c3e", // Global header font color
-  bodyColor: "#515254", // Global body font color
   backgroundColor: "#fff" // Used for setting manifest background color.
 };

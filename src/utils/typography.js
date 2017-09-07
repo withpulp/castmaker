@@ -1,14 +1,5 @@
 import Typography from 'typography';
 
-const MEDIA = {
-  MOBILE: '@media only screen and (min-width: 30em)',
-  TABLET: '@media only screen and (min-width: 48em)',
-  LAPTOP: '@media only screen and (min-width: 62em)',
-  DISPLAY: '@media only screen and (min-width: 75em)',
-  DISPLAY_L: '@media only screen and (min-width: 100em)',
-  DISPLAY_XL: '@media only screen and (min-width: 125em)'
-};
-
 const options = {
   googleFonts: [
     {

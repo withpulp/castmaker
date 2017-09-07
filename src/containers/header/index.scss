@@ -1,0 +1,74 @@
+@import '../../stylesheets/_variables';
+
+// header
+.header {
+  z-index: 2;
+
+  // headroom
+  .headroom-wrapper {
+    position: relative;
+    width: auto;
+    height: auto !important;
+    z-index: 5;
+
+    .headroom {
+
+      &.headroom--unpinned {
+        display: none;
+        position: fixed;
+        bottom: 1.75em;
+        left: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      &.headroom--pinned,
+      &.headroom--unfixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      &.headroom--unfixed {
+
+        .logo {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // header link
+  .link {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 3em;
+    height: 3em;
+    margin: 0;
+    z-index: 1;
+
+    .logo {
+      display: block;
+      margin: 0;
+      padding: 0.25em;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+}
+
+// navigating header
+.navigating .header {
+
+  .headroom-wrapper .headroom {
+
+    &.headroom--unpinned,
+    &.headroom--pinned,
+    &.headroom--unfixed {
+      display: block;
+    }
+  }
+}
