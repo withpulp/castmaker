@@ -6,7 +6,7 @@ import Quote from '../../components/quote/';
 import Message from '../../components/message/';
 import config from '../../../data/config';
 import quotes from '../../../data/quotes';
-import './index.css';
+import './index.scss';
 
 class Footer extends Component {
   getQuote() {

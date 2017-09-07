@@ -1,0 +1,20 @@
+@import '../../stylesheets/_variables';
+
+.footer {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: $full;
+  min-height: $fluid-half;
+  background-color: $color-neutral-hover;
+  color: $color-secondary;
+
+  .copyright {
+    position: absolute;
+    bottom: 0;
+    left: $half;
+    transform: translateX(-$half);
+    color: $color-neutral;
+  }
+}
