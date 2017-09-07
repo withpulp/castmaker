@@ -46,7 +46,6 @@ const options = {
       },
       'h1, h2, h3, h4, h5, h6': {
         position: 'relative',
-        marginBottom: '1em',
         lineHeight: 1
       },
       a: {

@@ -35,8 +35,19 @@ class Hero extends React.Component {
   }
 
   render() {
-    const { type, figure, children } = this.props;
-    let hero;
+    const { type, figure, image, children } = this.props;
+    let hero, setImage;
+
+    if (image) {
+      setImage = {
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover'
+      };
+    } else {
+      setImage = null;
+    }
 
     if (figure) {
       let setClass;
@@ -48,7 +59,8 @@ class Hero extends React.Component {
       }
 
       hero = (
-        <section className={type ? `${type} hero section` : `hero section`}>
+        <section className={type ? `${type} hero section` : `hero section`}
+                 style={setImage}>
           <figure className={setClass}>
             { children ?
               this.renderChildren()
@@ -60,7 +72,8 @@ class Hero extends React.Component {
       );
     } else {
       hero = (
-        <section className={type ? `${type} hero section` : `hero section`}>
+        <section className={type ? `${type} hero section` : `hero section`}
+                 style={setImage}>
           { children ?
             this.renderChildren()
           :
