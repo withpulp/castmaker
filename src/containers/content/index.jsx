@@ -1,7 +1,7 @@
 import React from 'react';
 import Headline from '../../components/headline/';
 import Markdown from '../../components/markdown/'
-import './index.css';
+import './index.scss';
 
 class Content extends React.Component {
   renderChildren() {

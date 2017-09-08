@@ -2,7 +2,7 @@ import React from 'react';
 import Headline from '../../components/headline/';
 import Message from '../../components/message/'
 import Button from '../../components/button/';
-import './index.css';
+import './index.scss';
 
 class Heel extends React.Component {
   renderChildren() {

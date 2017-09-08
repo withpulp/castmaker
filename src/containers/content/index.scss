@@ -1,0 +1,12 @@
+@import '../../stylesheets/_variables';
+
+.content.section {
+
+  &.post {
+    margin-bottom: $large;
+
+    .figure {
+      margin-bottom: $large;
+    }
+  }
+}

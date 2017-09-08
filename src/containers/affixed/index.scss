@@ -1,0 +1,65 @@
+@import '../../stylesheets/_variables';
+
+.affixed.section {
+  display: flex;
+  position: fixed;
+  left: $half;
+  transform: translateX(-$half);
+  width: $full;
+  margin: 0;
+  background-color: transparent;
+  z-index: 1;
+
+  .figure {
+
+    &.inline {
+      display: inline-block;
+      width: auto;
+    }
+
+    &.affixed {
+      position: fixed;
+      left: 0;
+
+      &.top {
+        top: 0;
+      }
+
+      &.bottom {
+        bottom: 0;
+      }
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.right {
+    left: auto;
+    right: $half;
+    transform: translateX($half);
+  }
+
+  &.centered {
+    position: absolute;
+    height: $full;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.fluid {
+    position: relative;
+    left: 0;
+    transform: none;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Headline from '../../components/headline';
 import config from '../../../data/config';
-import './index.css';
+import './index.scss';
 
 class Hero extends React.Component {
   renderHeadline() {

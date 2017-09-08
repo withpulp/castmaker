@@ -1,0 +1,34 @@
+@import '../../stylesheets/_variables';
+
+// section heel
+.heel.section {
+  text-align: center;
+
+  // section fluid
+  &.fluid {
+    margin-bottom: 0;
+    border-top: $tiny solid $color-primary-hover;
+    border-bottom: $jumbo solid $color-secondary;
+    background-color: $color-secondary-hover;
+    color: $color-neutral-hover;
+
+    .figure {
+      margin-top: $huge;
+      margin-bottom: $huge;
+
+      .title {
+        max-width: $god + $jumbo;
+        margin: $base auto $mini;
+        color: $color-background;
+        text-transform: uppercase;
+
+        .sub {
+          padding: $tiny 0;
+          color: $color-neutral-hover;
+          text-align: left;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Headline from '../../components/headline';
 import Button from '../../components/button';
-import './index.css';
+import './index.scss';
 
 class CTA extends React.Component {
   renderCTA() {

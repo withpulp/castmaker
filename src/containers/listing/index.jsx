@@ -2,7 +2,6 @@ import React from 'react';
 import Headline from '../../components/headline';
 import List from '../../components/list';
 import Button from '../../components/button';
-import './index.css';
 
 class Listing extends React.Component {
   getItems() {

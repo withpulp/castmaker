@@ -1,0 +1,13 @@
+@import '../../stylesheets/_variables';
+
+.cta.section {
+
+  &.centered {
+    text-align: center;
+  }
+
+  &.fluid {
+    margin-bottom: 0;
+    background-color: $color-mono;
+  }
+}
