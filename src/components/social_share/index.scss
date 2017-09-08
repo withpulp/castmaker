@@ -1,0 +1,22 @@
+@import '../../stylesheets/_variables';
+
+.social.share.figure {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: $huge;
+  margin-bottom: $huge;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  > div {
+    margin: $tiny;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .share-count {
+    text-align: center;
+  }
+}

@@ -1,0 +1,133 @@
+@import '../../stylesheets/_variables';
+
+// menu figure
+.menu.figure {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: $full;
+  padding: 0;
+  z-index: -1;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+
+  // menu button
+  .button {
+    position: absolute;
+    top: $base;
+    right: $base;
+    width: $large + $tiny;
+    height: $huge;
+    margin: 0;
+    padding: $mini;
+    color: $color-secondary;
+    z-index: 5;
+
+    .menu.icon {
+      position: relative;
+      display: block;
+      width: $full;
+      height: $mini;
+      background-color: $color-primary;
+      transition: all $faster;
+      backface-visibility: hidden;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -($small - $quantum);
+        width: $full;
+        height: $mini - $quantum;
+        background-color: $color-primary;
+        transition: all $faster;
+        backface-visibility: hidden;
+      }
+
+      &::after {
+        top: $small;
+      }
+    }
+
+    &:hover {
+
+      .menu.icon {
+        background-color: $color-primary-hover;
+
+        &::before,
+        &::after {
+          background-color: $color-primary-hover;
+        }
+      }
+    }
+  }
+
+  // menu navigation
+  .navigation {
+    width: $full;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+
+    .link {
+      display: block;
+      position: relative;
+      top: auto;
+      left: auto;
+      width: $full;
+      height: auto;
+      margin: 0 auto;
+      padding: $tiny;
+      color: $color-secondary;
+      font-family: $font-family-sans-serif;
+      font-size: $large;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: all $faster;
+
+      &.active,
+      &:hover {
+        background-color: $color-secondary-hover;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+// navigating state
+.navigating .menu.figure {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: $full;
+  min-height: $fluid-full;
+  opacity: 1;
+  visibility: visible;
+  background-color: $color-neutral-hover;
+
+  .button {
+    position: fixed;
+
+    .menu.icon {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate($tiny, $tiny);
+      }
+
+      &::after {
+        transform: rotate(-45deg) translate($tiny, -$tiny);
+      }
+    }
+  }
+
+  .navigation {
+    opacity: 1;
+    visibility: visible;
+  }
+}

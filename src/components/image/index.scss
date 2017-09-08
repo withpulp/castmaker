@@ -1,0 +1,13 @@
+@import '../../stylesheets/_variables';
+
+.image {
+	display: block;
+	width: $full;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+
+	&.thumb {
+		max-width: $god;
+	}
+}

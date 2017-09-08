@@ -8,7 +8,7 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
 ## Features
 
-* Blog
+* Markdown Blog
   * Categories
   * Tags
   * Navigation
@@ -25,11 +25,8 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
 ## Backlog
 
-* Create more templates for pages
-* Move CSS to Glamor (or other alternative)
-  * create design config to update site colors in one place
+* Create reusable templates for pages
 * Configure typography to use modular scale on text
-* Move global element styles to typography or related components
 * Edit markup of markdown HTML renders - see marked.renderer()
 
 ## Getting Started

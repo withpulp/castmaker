@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import Link from 'gatsby-link';
 import config from '../../../data/config';
-import './index.css';
+import './index.scss';
 
 class Headline extends React.Component {
   renderButton() {

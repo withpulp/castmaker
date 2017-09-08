@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
-import './index.css';
+import './index.scss';
 
 // @TODO: GA event tracking for outbound links
 // use button component

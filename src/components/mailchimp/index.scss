@@ -1,0 +1,47 @@
+@import '../../stylesheets/_variables';
+
+.mailchimp.figure {
+  max-width: $god + $god + $giant;
+  margin-bottom: $base;
+
+  .title {
+    margin-bottom: $tiny;
+
+    @media only screen and (min-width: $media-tablet) {
+      margin-left: -($large + $tiny);
+      margin-right: -($large + $tiny);
+    }
+
+    @media only screen and (min-width: $media-laptop) {
+      margin-left: -$massive;
+      margin-right: -$massive;
+    }
+
+    .sub {
+      margin-top: $tiny;
+      padding: $tiny;
+      border-top: $atomic solid $color-primary-hover;
+      color: $color-secondary-hover;
+      text-align: left;
+
+      @media only screen and (min-width: $media-tablet) {
+        padding-left: $massive;
+        padding-right: $massive;
+      }
+
+      @media only screen and (min-width: $media-laptop) {
+        padding-left: $god;
+        padding-right: $god;
+      }
+    }
+  }
+
+  .mailchimp.form {
+    margin-bottom: $tiny;
+  }
+
+  .disclaimer {
+    color: $color-neutral;
+    text-align: left;
+  }
+}

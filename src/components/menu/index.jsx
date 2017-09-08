@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Button from '../../components/button/';
-import './index.css';
+import './index.scss';
 
 class Menu extends React.Component {
   render() {

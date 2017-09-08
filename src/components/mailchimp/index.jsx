@@ -2,7 +2,7 @@ import React from 'react';
 import jQuery from 'jquery';
 import Headline from '../../components/headline';
 import Message from '../../components/message';
-import './index.css';
+import './index.scss';
 
 // @TODO: create or use a react npm package for mailchimp
 class Mailchimp extends React.Component {

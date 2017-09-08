@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import Link from 'gatsby-link';
-import './index.css';
+import './index.scss';
 
 class Button extends React.Component {
   renderIcon() {

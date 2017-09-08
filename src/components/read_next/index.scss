@@ -1,0 +1,104 @@
+@import '../../stylesheets/_variables';
+
+.read.next.figure {
+
+  .link {
+    display: flex;
+    position: relative;
+    width: $full;
+    min-height: $giant;
+    flex: none;
+    margin: 0 auto;
+    text-decoration: none;
+    transition: all $faster ease;
+
+    @media only screen and (min-width: $media-tablet) {
+      flex: 1;
+    }
+
+    .title {
+      text-transform: uppercase;
+
+      .sub {
+        color: $color-secondary;
+        font-size: $three-quarters;
+        font-weight: normal;
+        text-transform: lowercase;
+      }
+    }
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+
+    &:active {
+      background-color: $color-neutral-hover;
+    }
+  }
+
+  &.fluid {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: $tiny solid $color-neutral-hover;
+    background-color: $color-primary;
+
+    .link {
+
+      .title {
+        flex: 1;
+        align-self: flex-end;
+        max-width: $container-base;
+        margin: 0 auto;
+        padding: $base;
+        color: $color-mono;
+
+        @media only screen and (min-width: $media-tablet) {
+          max-width: $god + $galactic;
+        }
+
+        @media only screen and (min-width: $media-laptop) {
+          max-width: $god + $god + $jumbo;
+        }
+      }
+
+      &:hover {
+
+        .title {
+          color: $color-background;
+
+          .sub {
+            color: $color-secondary-hover;
+          }
+        }
+      }
+
+      &:active {
+
+        .title {
+          color: $color-secondary;
+        }
+      }
+
+      &.previous {
+
+        .title {
+
+          @media only screen and (min-width: $media-tablet) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.next {
+        text-align: right;
+
+        .title {
+
+          @media only screen and (min-width: $media-tablet) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

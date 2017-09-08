@@ -1,0 +1,15 @@
+@import '../../stylesheets/_variables';
+
+.message {
+  font-weight: normal;
+  line-height: 1;
+
+  &.disclaimer {
+    font-size: $two-thirds;
+  }
+
+  &.copyright {
+    margin-bottom: $tiny;
+    font-size: $two-thirds;
+  }
+}

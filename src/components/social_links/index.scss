@@ -1,0 +1,17 @@
+@import '../../stylesheets/_variables';
+
+.user.links.figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .button {
+    margin: 0;
+    margin-bottom: $base;
+
+    .icon {
+      font-size: $full + $half;
+    }
+  }
+}

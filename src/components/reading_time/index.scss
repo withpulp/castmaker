@@ -1,0 +1,19 @@
+@import '../../stylesheets/_variables';
+
+.reading.time.caption {
+  margin: $base;
+  padding: $mini;
+  box-shadow: 0 0 0 $quantum $color-secondary;
+  background-color: rgba($color-secondary, 0.95);
+  color: $color-neutral-hover;
+  font-size: $three-quarters;
+  text-align: center;
+  line-height: 1;
+
+  .label {
+    display: block;
+    color: $color-primary;
+    font-size: $half;
+    text-transform: uppercase;
+  }
+}

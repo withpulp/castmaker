@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 class Quote extends React.Component {
   renderQuote() {

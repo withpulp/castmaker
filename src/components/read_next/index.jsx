@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Headline from '../../components/headline/';
-import './index.css';
+import './index.scss';
 
 class ReadNext extends React.Component {
   render() {

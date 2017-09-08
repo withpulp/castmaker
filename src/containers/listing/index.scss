@@ -1,0 +1,44 @@
+@import '../../stylesheets/_variables';
+
+.listing.section {
+
+  &.posts {
+
+    .list {
+      margin: 0 auto;
+  		list-style: none;
+
+  		.item {
+  		  margin-bottom: $large;
+  		  padding: 0;
+
+  			.link {
+  			  color: $color-secondary-hover;
+  			  text-decoration: none;
+
+  				.title {
+  				  margin-bottom: $tiny;
+
+  					.sub {
+  					  margin-top: $micro;
+  					  padding-top: $mini;
+  					  border-top: $micro solid $color-neutral-hover;
+  					  transition: all $faster;
+  					}
+  				}
+
+  				&:hover {
+
+  					.title {
+
+  						.sub {
+  						  border-top: $micro solid $color-primary-hover;
+  						  color: $color-primary-hover;
+  						}
+  					}
+  				}
+  			}
+  		}
+    }
+  }
+}

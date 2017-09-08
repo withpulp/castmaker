@@ -1,0 +1,16 @@
+@import '../../stylesheets/_variables';
+
+.quote {
+  display: block;
+  max-width: $god + $god + $god;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: center;
+
+  .author {
+    display: block;
+    font-size: $three-quarters;
+    font-weight: bold;
+    font-style: normal;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Headline from '../../components/headline/';
 import Message from '../../components/message/';
-import './index.css';
+import './index.scss';
 
 class Counter extends React.Component {
   constructor(props) {

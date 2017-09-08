@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import config from '../../../data/config';
-import './index.css';
 
-class Disqus extends Component {
+class Disqus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,0 +1,72 @@
+@import '../../stylesheets/_variables';
+
+.button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	margin: $base auto;
+	padding: $small $base;
+	outline: 0;
+	border: 0;
+	box-shadow: 0 $quantum 0 $quantum $color-neutral;
+	background-color: $color-neutral-hover;
+	color: $color-secondary;
+	font-family: $font-family-sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 1;
+	transition: all $faster;
+
+	&:hover {
+		box-shadow: 0 0 0 $quantum $color-primary;
+		background-color: $color-primary-hover;
+		color: $color-background;
+		text-decoration: none;
+	}
+
+	&:active {
+		box-shadow: 0 0 0 $quantum $color-secondary-hover;
+		background-color: $color-neutral;
+		color: $color-background;
+		text-decoration: none;
+	}
+
+	&.primary {
+		box-shadow: 0 $quantum 0 $quantum $color-primary;
+		background-color: $color-primary-hover;
+		color: $color-background;
+
+		&:hover {
+			box-shadow: 0 0 0 $quantum $color-neutral-hover;
+			background-color: $color-neutral-hover;
+			color: $color-secondary;
+		}
+
+		&:active {
+			box-shadow: 0 0 0 $quantum $color-primary;
+			background-color: $color-primary;
+			color: $color-background;
+		}
+	}
+
+	&.transparent {
+		box-shadow: none;
+		background-color: transparent;
+		color: $color-neutral;
+
+		&:hover {
+			box-shadow: none;
+			background-color: transparent;
+			color: $color-secondary;
+			transform: scale(1.05);
+		}
+
+		&:active {
+			box-shadow: none;
+			background-color: transparent;
+			color: $color-secondary-hover;
+			transform: none;
+		}
+	}
+}

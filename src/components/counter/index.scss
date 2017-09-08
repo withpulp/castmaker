@@ -1,0 +1,47 @@
+@import '../../stylesheets/_variables';
+
+.counter.figure {
+
+  .title {
+    margin-bottom: $tiny;
+  }
+
+  .caption {
+
+    .count {
+      display: inline-block;
+      margin: 0 $mini;
+      padding: $tiny;
+      box-shadow: 0 0 0 $quantum $color-secondary inset;
+      background-color: $color-primary;
+      color: $color-background;
+      font-size: $three-quarters;
+      text-transform: uppercase;
+      letter-spacing: $quantum;
+      transition: all $faster;
+
+      @media only screen and (min-width: $media-phone) {
+        font-size: $full + $half;
+      }
+
+      .label {
+        display: block;
+        margin-top: $mini;
+        color: $color-neutral-hover;
+        font-size: $quarter;
+        font-weight: normal;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 $quantum $color-secondary;
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+
+  .message {
+    max-width: $god + $god;
+    margin: $base auto 0;
+    color: $color-neutral-hover;
+  }
+}

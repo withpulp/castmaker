@@ -1,0 +1,14 @@
+@import '../../stylesheets/_variables';
+
+.tags.figure {
+  text-align: right;
+
+  .tag.button {
+    margin-left: $base;
+    font-size: $two-thirds;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
