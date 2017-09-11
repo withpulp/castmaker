@@ -47,6 +47,7 @@ class Counter extends React.Component {
     }
   }
 
+  // @TODO: call updateHeadline when state lazy is true
   renderHeadline() {
     const { title, caption } = this.props;
 
