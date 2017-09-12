@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import './index.scss';
 
 class List extends React.Component {
+  // @TODO: use headline component to render headline
   renderList() {
     const { type, items } = this.props;
     let list;
@@ -16,12 +17,12 @@ class List extends React.Component {
                 key={item.path}>
               <Link className="link"
                     to={item.path}>
-                <h2 className="title">
+                <h4 className="title">
                   {item.title}
                   <small className="sub meta">
                     {item.date}
                   </small>
-                </h2>
+                </h4>
                 <p className="excerpt">
                   {item.excerpt}
                 </p>

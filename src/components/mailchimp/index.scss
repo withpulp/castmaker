@@ -13,8 +13,18 @@
     }
 
     @media only screen and (min-width: $media-laptop) {
-      margin-left: -$massive;
-      margin-right: -$massive;
+      margin-left: -($jumbo + $small);
+      margin-right: -($jumbo + $small);
+    }
+
+    @media only screen and (min-width: $media-desktop) {
+      margin-left: -($jumbo + $tiny);
+      margin-right: -($jumbo + $tiny);
+    }
+
+    @media only screen and (min-width: $media-desktop-huge) {
+      margin-left: -($jumbo + $mini);
+      margin-right: -($jumbo + $mini);
     }
 
     .sub {
@@ -30,8 +40,18 @@
       }
 
       @media only screen and (min-width: $media-laptop) {
-        padding-left: $god;
-        padding-right: $god;
+        padding-left: $galactic + $tiny;
+        padding-right: $galactic + $tiny;
+      }
+
+      @media only screen and (min-width: $media-desktop) {
+        padding-left: $galactic;
+        padding-right: $galactic;
+      }
+
+      @media only screen and (min-width: $media-desktop-huge) {
+        padding-left: $titanic + $tiny;
+        padding-right: $titanic + $tiny;
       }
     }
   }

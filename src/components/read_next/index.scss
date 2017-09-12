@@ -51,6 +51,7 @@
         margin: 0 auto;
         padding: $base;
         color: $color-mono;
+        font-size: $full;
 
         @media only screen and (min-width: $media-tablet) {
           max-width: $god + $galactic;

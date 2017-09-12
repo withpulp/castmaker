@@ -15,10 +15,11 @@
     .figure {
       margin-top: $huge;
       margin-bottom: $huge;
+      padding: $base;
 
       .title {
         max-width: $god + $jumbo;
-        margin: $base auto $mini;
+        margin: $base auto $tiny;
         color: $color-background;
         text-transform: uppercase;
 

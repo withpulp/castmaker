@@ -18,6 +18,7 @@
 
   				.title {
   				  margin-bottom: $tiny;
+            color: $color-secondary-hover;
 
   					.sub {
   					  margin-top: $micro;
@@ -30,6 +31,7 @@
   				&:hover {
 
   					.title {
+              color: $color-secondary;
 
   						.sub {
   						  border-top: $micro solid $color-primary-hover;

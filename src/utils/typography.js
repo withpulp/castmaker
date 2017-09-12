@@ -51,18 +51,14 @@ const options = {
         margin: 0,
         padding: 0
       },
-      'h1, h2, h3, h4, h5, h6': {
-        position: 'relative',
-        lineHeight: 1
-      },
       h1: {
-        ...scale(1.05)
-      },
-      h2: {
         ...scale(.85)
       },
-      h3: {
+      h2: {
         ...scale(.65)
+      },
+      h3: {
+        ...scale(.55)
       },
       h4: {
         ...scale(.45)
@@ -75,13 +71,13 @@ const options = {
       },
       [MEDIA.MOBILE]: {
         h1: {
-          ...scale(1.25)
+          ...scale(.95)
         },
         h2: {
-          ...scale(1.05)
+          ...scale(.75)
         },
         h3: {
-          ...scale(.85)
+          ...scale(.65)
         },
         h4: {
           ...scale(.55)
@@ -98,13 +94,13 @@ const options = {
       },
       [MEDIA.TABLET]: {
         h1: {
-          ...scale(1.45)
+          ...scale(1.05)
         },
         h2: {
-          ...scale(1.25)
+          ...scale(.85)
         },
         h3: {
-          ...scale(1.05)
+          ...scale(.75)
         },
         h4: {
           ...scale(.65)
@@ -116,18 +112,18 @@ const options = {
           ...scale(.45)
         },
         body: {
-          ...scale(.10)
+          ...scale(.1)
         }
       },
       [MEDIA.LAPTOP]: {
         h1: {
-          ...scale(1.65)
+          ...scale(1.25)
         },
         h2: {
-          ...scale(1.45)
+          ...scale(.95)
         },
         h3: {
-          ...scale(1.25)
+          ...scale(.85)
         },
         h4: {
           ...scale(.75)
@@ -144,13 +140,13 @@ const options = {
       },
       [MEDIA.DESKTOP]: {
         h1: {
-          ...scale(1.85)
+          ...scale(1.35)
         },
         h2: {
-          ...scale(1.65)
+          ...scale(1.05)
         },
         h3: {
-          ...scale(1.45)
+          ...scale(.95)
         },
         h4: {
           ...scale(.85)
@@ -167,13 +163,13 @@ const options = {
       },
       [MEDIA.DESKTOP_L]: {
         h1: {
-          ...scale(2.05)
+          ...scale(1.45)
         },
         h2: {
-          ...scale(1.85)
+          ...scale(1.15)
         },
         h3: {
-          ...scale(1.65)
+          ...scale(1.05)
         },
         h4: {
           ...scale(.95)
@@ -190,13 +186,13 @@ const options = {
       },
       [MEDIA.DESKTOP_XL]: {
         h1: {
-          ...scale(2.25)
+          ...scale(1.55)
         },
         h2: {
-          ...scale(2.05)
+          ...scale(1.25)
         },
         h3: {
-          ...scale(1.85)
+          ...scale(1.15)
         },
         h4: {
           ...scale(1.05)
@@ -210,6 +206,10 @@ const options = {
         body: {
           ...scale(.3)
         }
+      },
+      'h1, h2, h3, h4, h5, h6': {
+        position: 'relative',
+        lineHeight: 1
       },
       a: {
         position: 'relative',
