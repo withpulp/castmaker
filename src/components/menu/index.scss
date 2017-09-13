@@ -46,10 +46,22 @@
         background-color: $color-primary;
         transition: all $faster;
         backface-visibility: hidden;
+
+        @media only screen and (min-width: $media-phone) {
+          height: $mini;
+        }
+
+        @media only screen and (min-width: $media-desktop-huge) {
+          height: $mini - $quantum;
+        }
       }
 
       &::after {
         top: $small;
+
+        @media only screen and (min-width: $media-phone) {
+          top: $small - $quantum;
+        }
       }
     }
 
