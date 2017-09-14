@@ -25,9 +25,13 @@ Built with [GatsyJS](https://github.com/gatsbyjs/gatsby/).
 
 ## Backlog
 
-* Create reusable templates for pages
-* Configure typography to use modular scale on text
-* Edit markup of markdown HTML renders - see marked.renderer()
+* Create reusable templates for different pages
+  * Can use single template for: `/updates`, `/updates/categories/`, `/updates/tags/`
+  * Homepage template (unique)
+  * About Page Template (default page template)
+* Create a remark plugin for gatsby
+  * See this issue https://github.com/gatsbyjs/gatsby/issues/1997
+  * Use this plugin as example: https://github.com/zestedesavoir/zmarkdown/tree/master/packages/remark-align
 
 ## Getting Started
 
@@ -64,3 +68,10 @@ npm run develop
  ```
 
  WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
+
+ #### Pages and Templates
+
+ Edit export objects for pages in `data/pages`
+ Edit export objects for templates in `data/templates`
+
+ These objects are options for the containers and components used on the pages
