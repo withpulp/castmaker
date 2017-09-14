@@ -75,3 +75,11 @@ npm run develop
  Edit export objects for templates in `data/templates`
 
  These objects are options for the containers and components used on the pages
+
+## Deployment
+
+Add your domain to `src/CNAME`
+
+To deploy to github pages run: `build:gh`
+
+Make sure you update your registrars DNS to point to github's IP
