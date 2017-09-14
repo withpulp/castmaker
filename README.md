@@ -69,10 +69,10 @@ npm run develop
 
  WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
 
- #### Pages and Templates
+ ### Pages and Templates
 
- Edit export objects for pages in `data/pages`
- Edit export objects for templates in `data/templates`
+ * Edit export objects for pages in `data/pages`
+ * Edit export objects for templates in `data/templates`
 
  These objects are options for the containers and components used on the pages
 
