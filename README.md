@@ -80,6 +80,6 @@ npm run develop
 
 Add your domain to `src/CNAME`
 
-To deploy to github pages run: `build:gh`
+To deploy to github pages: `npm run build:gh`
 
 Make sure you update your registrars DNS to point to github's IP

@@ -15,7 +15,13 @@ class AboutIndex extends React.Component {
   render() {
     const { location } = this.props;
     const content = this.props.data.allMarkdownRemark.edges;
-    const page = pages.filter((page) => { return page.path === location.pathname; })[0];
+    const page = pages.filter((page) => {
+      if (location) {
+        return page.path === location.pathname
+      } else {
+        return page.path === '/about'
+      }
+    })[0];
 
     // @TODO: get only about page data
     // from content/pages/about.md

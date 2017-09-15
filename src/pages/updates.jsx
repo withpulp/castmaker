@@ -16,7 +16,13 @@ class UpdatesIndex extends React.Component {
   render() {
     const { location, data } = this.props;
     const posts = data.allMarkdownRemark.edges;
-    const page = pages.filter((page) => { return page.path === location.pathname; })[0];
+    const page = pages.filter((page) => {
+      if (location) {
+        return page.path === location.pathname
+      } else {
+        return page.path === config.blogPostPrefix
+      }
+    })[0];
 
     // @TODO: filter out post types in graphQL (if possible)
     // if not possible - find a better way to filter this data
