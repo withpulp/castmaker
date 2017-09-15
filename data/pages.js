@@ -1,11 +1,5 @@
 const config = require('./config');
-
-let root;
-if (process.env.NODE_ENV === `production`) {
-	root = config.pathPrefix ? config.pathPrefix + '/' : '/';
-} else {
-	root = '/';
-}
+const root = process.env.NODE_ENV === 'production' ? config.pathPrefix ? config.pathPrefix + '/' : '/' : '/'
 
 module.exports = [
 	{
