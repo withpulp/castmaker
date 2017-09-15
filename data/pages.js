@@ -1,7 +1,16 @@
+const config = require('./config');
+
+let root;
+if (process.env.NODE_ENV === `production`) {
+	root = config.pathPrefix ? config.pathPrefix + '/' : '/';
+} else {
+	root = '/';
+}
+
 module.exports = [
 	{
     id: 'home',
-		path: '/',
+		path: root,
     hero: {
       type: 'jumbo',
 			figure: true,
@@ -37,7 +46,7 @@ module.exports = [
 	},
   {
     id: 'about',
-		path: '/about',
+		path: root + 'about',
     hero: {
 			figure: true,
 			headline: {
@@ -59,7 +68,7 @@ module.exports = [
 	},
   {
     id: 'updates',
-		path: '/updates',
+		path: root + 'updates',
     hero: {
 			figure: true,
 			headline: {

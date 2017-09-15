@@ -11,17 +11,35 @@ import Counter from '../components/counter/';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
+let path;
+if (process.env.NODE_ENV === `production`) {
+  path = config.pathPrefix ? `${config.pathPrefix}/about` : '/about';
+} else {
+  path = '/about';
+}
+
 class AboutIndex extends React.Component {
-  render() {
+  componentWillMount() {
     const { location } = this.props;
-    const content = this.props.data.allMarkdownRemark.edges;
-    const page = pages.filter((page) => {
+
+    var page = pages.filter((page) => {
       if (location) {
         return page.path === location.pathname
       } else {
-        return page.path === '/about'
+        return page.path === path
       }
     })[0];
+
+    this.page = page;
+  }
+
+  getPageConfig() {
+    return this.page;
+  }
+
+  render() {
+    const content = this.props.data.allMarkdownRemark.edges;
+    const page = this.getPageConfig();
 
     // @TODO: get only about page data
     // from content/pages/about.md

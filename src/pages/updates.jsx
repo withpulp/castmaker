@@ -12,17 +12,37 @@ import Counter from '../components/counter/';
 import config from '../../data/config';
 import pages from '../../data/pages';
 
+let path;
+if (process.env.NODE_ENV === `production`) {
+  path = config.pathPrefix ? `${config.pathPrefix}${config.blogPostPrefix}` : config.blogPostPrefix;
+} else {
+  path = config.blogPostPrefix;
+}
+
 class UpdatesIndex extends React.Component {
-  render() {
-    const { location, data } = this.props;
-    const posts = data.allMarkdownRemark.edges;
-    const page = pages.filter((page) => {
+  componentWillMount() {
+    const { location } = this.props;
+    const path = config.pathPrefix ? `${config.pathPrefix}${config.blogPostPrefix}` : config.blogPostPrefix;
+
+    let page = pages.filter((page) => {
       if (location) {
         return page.path === location.pathname
       } else {
-        return page.path === config.blogPostPrefix
+        return page.path === path
       }
     })[0];
+
+    this.page = page;
+  }
+
+  getPageConfig() {
+    return this.page;
+  }
+
+  render() {
+    const { data } = this.props;
+    const posts = data.allMarkdownRemark.edges;
+    const page = this.getPageConfig();
 
     // @TODO: filter out post types in graphQL (if possible)
     // if not possible - find a better way to filter this data
