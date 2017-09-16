@@ -20,30 +20,31 @@ if (process.env.NODE_ENV === `production`) {
 
 class AboutIndex extends React.Component {
   componentWillMount() {
+    const content = this.props.data.allMarkdownRemark.edges;
+
+    var about = content.filter((item) => {
+      return item.node.frontmatter.title === 'About'
+    })[0];
+
     var page = pages.filter((page) => {
       return page.path === path
     })[0];
 
     this.page = page;
+    this.content = about.node;
   }
 
   getPageConfig() {
     return this.page;
   }
 
-  render() {
-    const content = this.props.data.allMarkdownRemark.edges;
-    const page = this.getPageConfig();
+  getPageContent() {
+    return this.content;
+  }
 
-    // @TODO: get only about page data
-    // from content/pages/about.md
-    // using graphql schema
-    let about;
-    content.forEach((item) => {
-      if (_.includes(item.node.frontmatter.type, 'page') && item.node.frontmatter.title === 'About') {
-        about = item;
-      }
-    });
+  render() {
+    const page = this.getPageConfig();
+    const content = this.getPageContent();
 
     return (
       <div className={`${page.id} page`}>
@@ -53,7 +54,7 @@ class AboutIndex extends React.Component {
               caption={page.hero.headline.caption} />
         <Content type={page.content.type}
                  figure={page.content.figure}
-                 data={about.node} />
+                 data={content} />
         <CTA type={page.cta.type}>
           <Mailchimp figure
                      title={config.subscribeTitle}

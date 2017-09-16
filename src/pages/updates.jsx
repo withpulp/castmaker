@@ -21,32 +21,32 @@ if (process.env.NODE_ENV === `production`) {
 
 class UpdatesIndex extends React.Component {
   componentWillMount() {
+    const { data } = this.props;
+    const posts = data.allMarkdownRemark.edges;
+
+    var updates = posts.filter((post) => {
+      return post.node.frontmatter.type === 'post'
+    });
+
     var page = pages.filter((page) => {
       return page.path === path
     })[0];
 
     this.page = page;
+    this.updates = updates;
   }
 
   getPageConfig() {
     return this.page;
   }
 
-  render() {
-    const { data } = this.props;
-    const posts = data.allMarkdownRemark.edges;
-    const page = this.getPageConfig();
+  getUpdates() {
+    return this.updates;
+  }
 
-    // @TODO: filter out post types in graphQL (if possible)
-    // if not possible - find a better way to filter this data
-    // query currently pulls all data (includes about.md)
-    // http://graphql.org/learn/queries/
-    let updates = [];
-    posts.forEach((post) => {
-      if (_.includes(post.node.frontmatter.type, 'post')) {
-        updates.push(post);
-      }
-    });
+  render() {
+    const page = this.getPageConfig();
+    const posts = this.getUpdates();
 
     return (
       <div className={`${page.id} page`}>
@@ -60,7 +60,7 @@ class UpdatesIndex extends React.Component {
                  prefix={page.listing.prefix}
                  button={page.listing.button}
                  headline={page.listing.headline}
-                 list={updates} />
+                 list={posts} />
         <CTA type={page.cta.type}>
           <Mailchimp figure
                      title={config.subscribeTitle}
