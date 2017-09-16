@@ -21,15 +21,8 @@ if (process.env.NODE_ENV === `production`) {
 
 class UpdatesIndex extends React.Component {
   componentWillMount() {
-    const { location } = this.props;
-    const path = config.pathPrefix ? `${config.pathPrefix}${config.blogPostPrefix}` : config.blogPostPrefix;
-
-    let page = pages.filter((page) => {
-      if (location) {
-        return page.path === location.pathname
-      } else {
-        return page.path === path
-      }
+    var page = pages.filter((page) => {
+      return page.path === path
     })[0];
 
     this.page = page;

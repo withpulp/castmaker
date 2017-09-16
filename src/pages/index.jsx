@@ -24,14 +24,8 @@ if (process.env.NODE_ENV === `production`) {
 
 class Index extends React.Component {
   componentWillMount() {
-    const { location } = this.props;
-
     var page = pages.filter((page) => {
-      if (location) {
-        return page.path === location.pathname
-      } else {
-        return page.path === path
-      }
+      return page.path === path
     })[0];
 
     this.page = page;
