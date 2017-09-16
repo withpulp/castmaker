@@ -1,5 +1,5 @@
 const config = require('./config');
-const root = process.env.NODE_ENV === 'production' ? config.pathPrefix ? config.pathPrefix + '/' : '/' : '/'
+const root = process.env.NODE_ENV === 'production' ? config.pathPrefix ? config.pathPrefix + '/' : '/' : '/';
 
 module.exports = [
 	{

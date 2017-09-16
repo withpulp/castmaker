@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Button from '../../components/button/';
+import config from '../../../data/config';
 import './index.scss';
+
+const prefix = process.env.NODE_ENV === 'production' ? config.pathPrefix ? config.pathPrefix : '' : '';
 
 class Menu extends React.Component {
   render() {
@@ -16,7 +19,7 @@ class Menu extends React.Component {
           {pages.map(page => (
             <Link key={page.id}
                   className="link"
-                  to={page.path}
+                  to={page.path.replace(prefix, '')}
                   onClick={action}>
               {page.id}
             </Link>
