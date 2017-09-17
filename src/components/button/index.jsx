@@ -23,7 +23,7 @@ class Button extends React.Component {
 
   renderButton() {
     const { type, label, to, action } = this.props;
-    let button, setClass;
+    let setClass;
 
     if (type && typeof type === 'string') {
       setClass = `${type} button`;
@@ -32,19 +32,16 @@ class Button extends React.Component {
     }
 
     if (_.includes(type, 'link')) {
-      button = <Link className={setClass} to={to}>{this.renderIcon()}{label}</Link>
+      return <Link className={setClass} to={to}>{this.renderIcon()}{label}</Link>
     } else if (_.includes(type, 'submit')) {
-      button = <button type="submit" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
+      return <button type="submit" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
     } else {
-      button = <button type="button" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
+      return <button type="button" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
     }
-
-    return button;
   }
 
   render() {
     const { figure } = this.props;
-    let button;
 
     if (figure) {
       let setClass;
@@ -55,16 +52,14 @@ class Button extends React.Component {
         setClass = 'button figure';
       }
 
-      button = (
+      return (
         <figure className={setClass}>
           { this.renderButton() }
         </figure>
       );
     } else {
-      button = this.renderButton()
+      return this.renderButton()
     }
-
-    return button;
   }
 }
 

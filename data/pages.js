@@ -28,7 +28,7 @@ module.exports = [
 				type: 'primary link',
 				label: 'View All Updates'
 			},
-      prefix: root + 'updates',
+      prefix: '/updates',
 			headline: {
 				level: 1,
 				title: 'Latest Update'
@@ -74,7 +74,7 @@ module.exports = [
     listing: {
       type: 'posts',
 			figure: 'posts',
-      prefix: root + 'updates'
+      prefix: '/updates'
     },
     cta: {
       type: 'centered'

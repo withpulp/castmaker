@@ -7,10 +7,9 @@ class List extends React.Component {
   // @TODO: use headline component to render headline
   renderList() {
     const { type, items } = this.props;
-    let list;
 
     if (_.includes(type, 'posts')) {
-      list = (
+      return (
         <ul className={type ? `${type} list` : `list`}>
           {items.map(item => (
             <li className="item"
@@ -32,7 +31,7 @@ class List extends React.Component {
         </ul>
       );
     } else {
-      list = (
+      return (
         <ul className={type ? `${type} list` : `list`}>
           {items.map(item => (
             <li className="item"
@@ -43,13 +42,10 @@ class List extends React.Component {
         </ul>
       );
     }
-
-    return list;
   }
 
   render() {
     const { figure } = this.props;
-    let list;
 
     if (figure) {
       let setClass;
@@ -60,16 +56,14 @@ class List extends React.Component {
         setClass = 'list figure';
       }
 
-      list = (
+      return (
         <figure className={setClass}>
           { this.renderList() }
         </figure>
       );
     } else {
-      list = this.renderList();
+      return this.renderList();
     }
-
-    return list;
   }
 }
 
