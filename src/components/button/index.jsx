@@ -31,9 +31,9 @@ class Button extends React.Component {
       setClass = 'button';
     }
 
-    if (_.includes(type, 'link')) {
+    if (type.includes('link')) {
       return <Link className={setClass} to={to}>{this.renderIcon()}{label}</Link>
-    } else if (_.includes(type, 'submit')) {
+    } else if (type.includes('submit')) {
       return <button type="submit" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>
     } else {
       return <button type="button" className={setClass} onClick={action}>{this.renderIcon()}{label}</button>

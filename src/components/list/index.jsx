@@ -8,7 +8,7 @@ class List extends React.Component {
   renderList() {
     const { type, items } = this.props;
 
-    if (_.includes(type, 'posts')) {
+    if (type.includes('posts')) {
       return (
         <ul className={type ? `${type} list` : `list`}>
           {items.map(item => (
